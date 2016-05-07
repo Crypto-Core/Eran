@@ -1,0 +1,24 @@
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\bin\Debug\EranBot.exe
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\bin\Debug\EranBot.pdb
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\bin\Debug\EranBot.xml
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\obj\x86\Debug\EranBot.Resources.resources
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\obj\x86\Debug\EranBot.vbproj.GenerateResource.Cache
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\obj\x86\Debug\EranBot.exe
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\obj\x86\Debug\EranBot.xml
+C:\Users\Arkan\AppData\Local\Temporary Projects\EranBot\obj\x86\Debug\EranBot.pdb
+C:\Users\Arkan\Desktop\EranBot\EranBot\obj\x86\Debug\EranBot.exe
+C:\Users\Arkan\Desktop\EranBot\EranBot\obj\x86\Debug\EranBot.xml
+C:\Users\Arkan\Desktop\EranBot\EranBot\obj\x86\Debug\EranBot.pdb
+C:\Users\Arkan\Desktop\EranBot\EranBot\bin\Debug\EranBot.exe
+C:\Users\Arkan\Desktop\EranBot\EranBot\bin\Debug\EranBot.pdb
+C:\Users\Arkan\Desktop\EranBot\EranBot\bin\Debug\EranBot.xml
+C:\Users\Arkan\Desktop\EranBot\EranBot\obj\x86\Debug\EranBot.Resources.resources
+C:\Users\Arkan\Desktop\EranBot\EranBot\obj\x86\Debug\EranBot.vbproj.GenerateResource.Cache
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\obj\x86\Debug\EranBot.exe
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\obj\x86\Debug\EranBot.xml
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\obj\x86\Debug\EranBot.pdb
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\bin\Debug\EranBot.exe
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\bin\Debug\EranBot.pdb
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\bin\Debug\EranBot.xml
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\obj\x86\Debug\EranBot.Resources.resources
+C:\Users\Arkan\Desktop\WinCrypt\Eran\EranBot\obj\x86\Debug\EranBot.vbproj.GenerateResource.Cache

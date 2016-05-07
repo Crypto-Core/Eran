@@ -1,0 +1,150 @@
+﻿[main_frm]
+FileToolStripMenuItem=Datei
+ExitToolStripMenuItem1=Beenden
+UsersToolStripMenuItem=Benutzer
+AddUserToolStripMenuItem=Benutzer hinzufügen
+AccountToolStripMenuItem=Konto
+DisconnectToolStripMenuItem=Verbindung trennen
+ConnectionToolStripMenuItem=Verbingung
+ShowPublicKeyToolStripMenuItem=Zeige öffentlichen Schlüssel
+ShowServerKeyToolStripMenuItem=Zeige Server Schlüssel
+ToolsToolStripMenuItem=Werkzeuge
+SettingsToolStripMenuItem=Einstellungen
+SendPingToConnectedAccesNodeToolStripMenuItem=Sende Ping
+HelpToolStripMenuItem=Hilfe
+AboutToolStripMenuItem=About
+status_lb=Status:
+status_strip=Offline
+OfflineToolStripMenuItem=Offline
+BusyToolStripMenuItem=Abwesend
+OnlineToolStripMenuItem=Online
+user_column=Benutzer
+eran_adr_column=Eran Addresse
+StartChatToolStripMenuItem=Starte Chat
+CopyEranAddressToolStripMenuItem=Kopiere Eran Adresse
+DeleteFromListToolStripMenuItem=Lösche von der Liste
+BlockingToolStripMenuItem=Blockieren
+ReloadListToolStripMenuItem=List neu laden
+StateToolStripMenuItem=Status
+OnlineToolStripMenuItem1=Online
+BusyToolStripMenuItem1=Abwesend
+OfflineToolStripMenuItem1=Offline
+OpenToolStripMenuItem=Öffnen
+ExitToolStripMenuItem=Beenden
+AcceptIncommingFileMSG=Eingehende Datei von {0} annehmen?
+EranAddressCopyMSG=Eran Adresse kopiert!
+EranAddressCopyTitle=Kopieren
+DeleteContactMSG=Möchtest du diesen Kontakt wirklich löschen?
+DeleteContactTitle=Benutzer Löschen
+PublicKeyMSG=Öffentlicher Schlüssel: {0}
+PublicKeyTitle=Öffentlicher Schlüssel
+ServerKeyTitle=Server Schlüssel
+LanguageToolStripMenuItem=Sprache
+ExportAccountToolStripMenuItem=Konto exportieren
+ImportAccountToolStripMenuItem=Konto importieren
+CheckUpdateToolStripMenuItem=Überprüfe nach updates
+
+[SecureDesktop]
+SecureDesktopMSGClose=Möchtest du Eran wirklich beenden?
+SecureDesktopTitleClose=Beenden
+[add_user]
+title=Benutzer hinzufügen
+eran_adress_lb=Eran Adresse:
+add_bt=Hinzufügen
+
+[about]
+title=About
+ok_bt=OK
+
+[connect_frame]
+connect_lb=Verbinden....
+
+[create_account]
+create_eran_acc_gb=Eran Konto erstellen
+usr_lb=Benutzername:
+min_chars_urs_lb=min. 6 Zeichen
+pwd_lb=Passwort:
+min_chars_pwd_lb=min. 8 Zeichen
+eran_adr_lb=Eran Adresse:
+auth_key_lb=Auth. Schlüssel:
+create_bt=Erstellen
+
+[FileDialog_]
+title=File Dialog
+name_column=Name
+type_column=Typ
+size_column=Grüße
+creat_time_column=Erstellungsdatum
+filename_lb=Dateiname:
+open_bt=Öffnen
+cancel_bt=Abbrechen
+
+[FileTransfer]
+title=Eingehende Datei
+brocken_lb=Übertragung fehlgeschlagen!
+hash_lb=Hash:
+packname_lb=Paketname:
+ok_bt=OK
+
+[login]
+server_gb=Verbindungsknoten
+host_lb=Host:
+port_lb=Port:
+login_gb=Login
+usr_lb=Benutzername:
+pwd_lb=Password:
+join_bt=Login
+WrongLoginMSG={0}\r\nFalsche logindaten!
+WrongLoginTitle=Login fehlgeschlagen!
+[nChat_frm]
+UserToolStripMenuItem=Benutzer
+BlockingToolStripMenuItem=Blockieren
+OptionsToolStripMenuItem=Option
+RenewEncryptionToolStripMenuItem=Erneuere Verschlüsselung
+ClearChatToolStripMenuItem1=Chat leeren
+ClearChatToolStripMenuItem=Chat leeren
+sendfile_bt=Datei senden
+alert_bt=Alert!
+EncryptMSG=Handshake mit: RSA 2048bit\r\nChat Verschlüsselung: AES 256bit\r\nSHA1: {0}
+
+[SendFile]
+title=Datei senden
+
+[settings]
+title=Einstellungen
+startmodus_gb=Startmodus
+startwindow_rb=Zeige Startfenster
+start_normal=Starte normal
+secure_desktop_rb=Starte in Secure Desktop
+scan_gb=Speichere Einstiegsknoten
+save_cb=Gespeichert
+host_lb=Host:
+port_lb=Port:
+own_access_node_gb=Eigener Einstiegsknoten
+listen_on_port_lb=Lauschen auf Port:
+allow_access_node_cb=Erlaube Einstiegsknoten
+messenger_gb=Messenger
+play_msg_sound=Spiele Nachrichtensound ab.
+play_usr_online=Spiele Sound ab wenn ein Nutzer Online geht.
+encryption_gb=Verschlüsselung
+auto_rec_lb=Automatisch neu verbinden:
+
+[StartWindow]
+title=Eran Start Fenster
+msg1=Möchtest du Eran im Secure Desktop starten?
+msg2=Im Secure Desktop Modus können keine Screenshots oder Tasteneinschläge aufgezeichnet werden. Sog. KeyLogger, Trojaner, Spionagesoftware sind somit wirkunglos.
+save_selection_cb=Speichere Auswahl
+startNormal_bt=Starte normal
+secureDesktop_bt=Starte in Secure Desktop
+
+[Update]
+AvailableMSG=Neue Updates verfügbar. Möchtest du sie installieren?
+AvailableMSGTitle=Neue Updates
+NoAvMSG=Keine neuen Updates verfügbar
+NoAvMSGTitle=Überprüfe Updates
+
+[importAccount]
+title=Konto importieren
+pwd_lb=Passwort:
+path_lb=Pfad:
+import_bt=Importieren

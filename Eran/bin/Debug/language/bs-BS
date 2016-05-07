@@ -1,0 +1,150 @@
+﻿[main_frm]
+FileToolStripMenuItem=fajl
+ExitToolStripMenuItem1=izlaz
+UsersToolStripMenuItem=korisnik
+AddUserToolStripMenuItem=dodaj korisnika
+AccountToolStripMenuItem=konto
+DisconnectToolStripMenuItem=prekini konekciju
+ConnectionToolStripMenuItem=konekcija
+ShowPublicKeyToolStripMenuItem=pokazi javni ključ
+ShowServerKeyToolStripMenuItem=pokazi ključ servera
+ToolsToolStripMenuItem=alati
+SettingsToolStripMenuItem=postavke
+SendPingToConnectedAccesNodeToolStripMenuItem=pošalji ping
+HelpToolStripMenuItem=pomoč
+AboutToolStripMenuItem=oko
+status_lb=stanje:
+status_strip=Offline
+OfflineToolStripMenuItem=Offline
+BusyToolStripMenuItem=odsutan
+OnlineToolStripMenuItem=Online
+user_column=korisnik
+eran_adr_column=Eran adresa
+StartChatToolStripMenuItem=startuj Chat
+CopyEranAddressToolStripMenuItem=kopiraj Eran adresu
+DeleteFromListToolStripMenuItem=izbriši sa liste
+BlockingToolStripMenuItem=blokiraj
+ReloadListToolStripMenuItem=Učitaj listu ponovo
+StateToolStripMenuItem=stanje
+OnlineToolStripMenuItem1=Online
+BusyToolStripMenuItem1=odsutan
+OfflineToolStripMenuItem1=Offline
+OpenToolStripMenuItem=Otvori
+ExitToolStripMenuItem=Zatvori
+AcceptIncommingFileMSG=Dolazni fajl od {0} primiti?
+EranAddressCopyMSG=Eran adresa kopirana!
+EranAddressCopyTitle=kopiraj
+DeleteContactMSG=Da li želite ovaj kontakt zaista izbrisati?
+DeleteContactTitle=izbriši korisnika
+PublicKeyMSG=javni ključ: {0}
+PublicKeyTitle=javni ključ
+ServerKeyTitle=jezik servera
+LanguageToolStripMenuItem=jezik
+ExportAccountToolStripMenuItem=Export Account
+ImportAccountToolStripMenuItem=Import Account
+CheckUpdateToolStripMenuItem=Pretraga ažuriranja
+
+[SecureDesktop]
+SecureDesktopMSGClose=Da li želita Eran zaista zatvoriti?
+SecureDesktopTitleClose=Zatvori
+[add_user]
+title=dodaj korisnika
+eran_adress_lb=Eran adresa:
+add_bt=dodaj
+
+[about]
+title=O
+ok_bt=OK
+
+[connect_frame]
+connect_lb=spajam....
+
+[create_account]
+create_eran_acc_gb=napravi Eran konto
+usr_lb=ime korisnika:
+min_chars_urs_lb=najmanje 6 znakova
+pwd_lb=lozinka:
+min_chars_pwd_lb=najmanje 8 zankova
+eran_adr_lb=Eran adresa:
+auth_key_lb=ključ za autentifikaciju:
+create_bt=napravi
+
+[FileDialog_]
+title=dijalog fajla
+name_column=ime
+type_column=tip, vrsta
+size_column=veličina
+creat_time_column=datum kreiranja
+filename_lb=ime fajla:
+open_bt=Otvori
+cancel_bt=pobaci
+
+[FileTransfer]
+title=dolazni fajl
+brocken_lb=prijenos nije uspio!
+hash_lb=Hash:
+packname_lb=ime paketa:
+ok_bt=OK
+
+[login]
+server_gb=čvor konekcije
+host_lb=Host:
+port_lb=Port:
+login_gb=prijava
+usr_lb=ime korisnika:
+pwd_lb=lozinka:
+join_bt=prijava
+WrongLoginMSG={0}\r\npogresni login potaci !
+WrongLoginTitle=prijava bezuspješna!
+[nChat_frm]
+UserToolStripMenuItem=korisnik
+BlockingToolStripMenuItem=blokirati
+OptionsToolStripMenuItem=opcija
+RenewEncryptionToolStripMenuItem=obnovi šifrovanje
+ClearChatToolStripMenuItem1=isprazni chat
+ClearChatToolStripMenuItem=isprazni chat
+sendfile_bt=pošalji fajl
+alert_bt=opreznost!
+EncryptMSG=Handshake sa: RSA 2048bit\r\nChat šifrovanje: AES 256bit\r\nSHA1: {0}
+
+[SendFile]
+title=pošalji fajl
+
+[settings]
+title=postavke
+startmodus_gb=nacin startovanja
+startwindow_rb=pokaži prozor startovanja
+start_normal=startuj normalno
+secure_desktop_rb=startuj u Secure Desktop
+scan_gb=sacuvaj ulazni čvor
+save_cb=sačuvano
+host_lb=Host:
+port_lb=Port:
+own_access_node_gb=vlastiti ulazni čvor
+listen_on_port_lb=preslušavanje na Port-u:
+allow_access_node_cb=dozvoli ulazni čvor
+messenger_gb=Messenger
+play_msg_sound=uključi audio poruku.
+play_usr_online=uključi zvuk kada korisnik bude online.
+encryption_gb=šifrovanje
+auto_rec_lb=spojiti ponovo automatski:
+
+[StartWindow]
+title=Eran startuj prozor
+msg1=Da li zelite Eran u Secure Desktop započeti?
+msg2=U Secure Desktop načinu (dopisivanja) nemogu se Screenshots ili pritisci na tastaturi sačuvati. Tako da su tkz. KeyLogger, Trojani, programi za spijuniranje beznačanjni.
+save_selection_cb=sačuvaj izabrano
+startNormal_bt=startuj normalno
+secureDesktop_bt=startuj u Secure Desktop
+
+[Update]
+AvailableMSG=New update available. Do you want to install?
+AvailableMSGTitle=New Updates
+NoAvMSG=No new updates available!
+NoAvMSGTitle=Check Update
+
+[importAccount]
+title=Import Account
+pwd_lb=Password:
+path_lb=Path:
+import_bt=Import

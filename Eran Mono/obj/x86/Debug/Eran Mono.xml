@@ -1,0 +1,141 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EranMono
+</name>
+</assembly>
+<members>
+<member name="P:Eran_Mono.AESEncrypt.KeySalt">
+	<summary>
+ Gibt einen Salt-Wert für das Passwort für die Verschlüsselung an (ab 8 Bytes)
+ </summary>
+</member><member name="P:Eran_Mono.AESEncrypt.IVSalt">
+	<summary>
+ Gibt einen Salt-Wert für den InitialisierungsVektor für die Verschlüsselung an (ab 8 Bytes)
+ </summary>
+</member><member name="P:Eran_Mono.AESEncrypt.BitLen">
+	<summary>
+ Gibt die Verschlüsselungsstärke in Bits an:
+ DES = 64;  TDES = 128,192;  RIJNDAEL = 128,192,256;  RC2 = 40 bis 128 (8er Schritte)
+ </summary>
+</member><member name="F:Eran_Mono.AESEncrypt.ALGO.DES">
+	<summary>
+ 64 Bit
+ </summary>
+</member><member name="F:Eran_Mono.AESEncrypt.ALGO.TDES">
+	<summary>
+ 128 Bit, 192 Bit
+ </summary>
+</member><member name="F:Eran_Mono.AESEncrypt.ALGO.RIJNDAEL">
+	<summary>
+ 128 Bit, 192 Bit, 256 Bit
+ </summary>
+</member><member name="F:Eran_Mono.AESEncrypt.ALGO.RC2">
+	<summary>
+ 40 - 128 Bit
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Encode(System.String,System.String,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt eine Datei und speichert es in eine andere Datei (HDD -&gt; HDD)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Encode(System.Byte[]@,System.String,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt ein ByteArray und speichert es in eine Datei (RAM -&gt; HDD)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Encode(System.String,System.Byte[]@,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt eine Datei und speichert es in ein ByteArray (HDD -&gt; RAM)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Encode(System.Byte[]@,System.Byte[]@,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt ein ByteArray und speichert es in ein anders ByteArray (RAM -&gt; RAM)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Decode(System.String,System.String,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt eine Datei und speichert es in eine andere Datei (HDD -&gt; HDD)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Decode(System.Byte[]@,System.String,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt ein ByteArray und speichert es in eine Datei (RAM -&gt; HDD)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Decode(System.String,System.Byte[]@,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt eine Datei und speichert es in ein ByteArray (HDD -&gt; RAM)
+ </summary>
+</member><member name="M:Eran_Mono.AESEncrypt.Decode(System.Byte[]@,System.Byte[]@,System.String,Eran_Mono.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt ein ByteArray und speichert es in ein anders ByteArray (RAM -&gt; RAM)
+ </summary>
+</member><member name="T:Eran_Mono.AESEncrypt">
+	<summary>
+ Das ist eine Kryptographieklasse die die Verschlüsselungsalgorithmen aus den .NET Framework
+ zusammenfasst und in einfach anzuwendenen Funktionen kapselt.
+ </summary>
+	<remarks>Tim Hartwig</remarks>
+</member><member name="P:Eran_Mono.My.Resources.Resources.ResourceManager">
+	<summary>
+  Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.Culture">
+	<summary>
+  Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+  Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.accept">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.add">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.busyR">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.cancel">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.eran_icon80">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.eran_logotrans2">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.key">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.offlineR">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.onlineR">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.profilimage">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.trans5">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="T:Eran_Mono.My.Resources.Resources">
+	<summary>
+  Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+</summary>
+</member><member name="M:Eran_Mono.rHash.HashString(System.String,Eran_Mono.rHash.HASH)">
+	<summary>
+     Diese Funktion berechnet einen Hash von einem String
+ </summary>
+	<param name="Value">Den String von dem ein Hash berechnet werden soll</param>
+	<param name="Hash">Gibt den Hashalgorithmus an</param>
+</member>
+</members>
+</doc>

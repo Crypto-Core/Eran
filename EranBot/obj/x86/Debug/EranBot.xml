@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+EranBot
+</name>
+</assembly>
+<members>
+<member name="M:EranBot.rHash.HashString(System.String,EranBot.rHash.HASH)">
+	<summary>
+     Diese Funktion berechnet einen Hash von einem String
+ </summary>
+	<param name="Value">Den String von dem ein Hash berechnet werden soll</param>
+	<param name="Hash">Gibt den Hashalgorithmus an</param>
+</member><member name="P:EranBot.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:EranBot.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:EranBot.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:EranBot.AESEncrypt.KeySalt">
+	<summary>
+ Gibt einen Salt-Wert für das Passwort für die Verschlüsselung an (ab 8 Bytes)
+ </summary>
+</member><member name="P:EranBot.AESEncrypt.IVSalt">
+	<summary>
+ Gibt einen Salt-Wert für den InitialisierungsVektor für die Verschlüsselung an (ab 8 Bytes)
+ </summary>
+</member><member name="P:EranBot.AESEncrypt.BitLen">
+	<summary>
+ Gibt die Verschlüsselungsstärke in Bits an:
+ DES = 64;  TDES = 128,192;  RIJNDAEL = 128,192,256;  RC2 = 40 bis 128 (8er Schritte)
+ </summary>
+</member><member name="F:EranBot.AESEncrypt.ALGO.DES">
+	<summary>
+ 64 Bit
+ </summary>
+</member><member name="F:EranBot.AESEncrypt.ALGO.TDES">
+	<summary>
+ 128 Bit, 192 Bit
+ </summary>
+</member><member name="F:EranBot.AESEncrypt.ALGO.RIJNDAEL">
+	<summary>
+ 128 Bit, 192 Bit, 256 Bit
+ </summary>
+</member><member name="F:EranBot.AESEncrypt.ALGO.RC2">
+	<summary>
+ 40 - 128 Bit
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Encode(System.String,System.String,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt eine Datei und speichert es in eine andere Datei (HDD -&gt; HDD)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Encode(System.Byte[]@,System.String,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt ein ByteArray und speichert es in eine Datei (RAM -&gt; HDD)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Encode(System.String,System.Byte[]@,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt eine Datei und speichert es in ein ByteArray (HDD -&gt; RAM)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Encode(System.Byte[]@,System.Byte[]@,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion verschlüsselt ein ByteArray und speichert es in ein anders ByteArray (RAM -&gt; RAM)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Decode(System.String,System.String,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt eine Datei und speichert es in eine andere Datei (HDD -&gt; HDD)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Decode(System.Byte[]@,System.String,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt ein ByteArray und speichert es in eine Datei (RAM -&gt; HDD)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Decode(System.String,System.Byte[]@,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt eine Datei und speichert es in ein ByteArray (HDD -&gt; RAM)
+ </summary>
+</member><member name="M:EranBot.AESEncrypt.Decode(System.Byte[]@,System.Byte[]@,System.String,EranBot.AESEncrypt.ALGO,System.Int32)">
+	<summary>
+ Diese Funktion entschlüsselt ein ByteArray und speichert es in ein anders ByteArray (RAM -&gt; RAM)
+ </summary>
+</member><member name="T:EranBot.AESEncrypt">
+	<summary>
+ Das ist eine Kryptographieklasse die die Verschlüsselungsalgorithmen aus den .NET Framework
+ zusammenfasst und in einfach anzuwendenen Funktionen kapselt.
+ </summary>
+	<remarks>Tim Hartwig</remarks>
+</member>
+</members>
+</doc>

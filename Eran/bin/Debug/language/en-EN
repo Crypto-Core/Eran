@@ -1,0 +1,151 @@
+[main_frm]
+FileToolStripMenuItem=File
+ExitToolStripMenuItem1=Exit
+UsersToolStripMenuItem=Users
+AddUserToolStripMenuItem=Add User
+AccountToolStripMenuItem=Account
+DisconnectToolStripMenuItem=Disconnect
+ConnectionToolStripMenuItem=Connection
+ShowPublicKeyToolStripMenuItem=Show PublicKey
+ShowServerKeyToolStripMenuItem=Show Server Key
+ToolsToolStripMenuItem=Tools
+SettingsToolStripMenuItem=Settings
+SendPingToConnectedAccesNodeToolStripMenuItem=Send Ping
+HelpToolStripMenuItem=Help
+AboutToolStripMenuItem=About
+status_lb=Status:
+status_strip=Offline
+OfflineToolStripMenuItem=Offline
+BusyToolStripMenuItem=Busy
+OnlineToolStripMenuItem=Online
+user_column=User
+eran_adr_column=Eran Address
+StartChatToolStripMenuItem=Start Chat
+CopyEranAddressToolStripMenuItem=Copy Eran address
+DeleteFromListToolStripMenuItem=Delete from list
+BlockingToolStripMenuItem=Blocking
+ReloadListToolStripMenuItem=Reload List
+StateToolStripMenuItem=State
+OnlineToolStripMenuItem1=Online
+BusyToolStripMenuItem1=Busy
+OfflineToolStripMenuItem1=Offline
+OpenToolStripMenuItem=Open
+ExitToolStripMenuItem=Exit
+AcceptIncommingFileMSG=Accept incomming File from {0}?
+EranAddressCopyMSG=Eran address copied!
+EranAddressCopyTitle=Copy
+DeleteContactMSG=Do you want to delete this contact?
+DeleteContactTitle=Delete user
+PublicKeyMSG=Public Key: {0}
+PublicKeyTitle=Public Key
+ServerKeyTitle=Server Key
+LanguageToolStripMenuItem=Language
+ExportAccountToolStripMenuItem=Export Account
+ImportAccountToolStripMenuItem=Import Account
+CheckUpdateToolStripMenuItem=Check Update
+
+[SecureDesktop]
+SecureDesktopMSGClose=Do you want Eran really close?
+SecureDesktopTitleClose=Exit
+
+[add_user]
+title=Add User
+eran_adress_lb=Eran address:
+add_bt=Add
+
+[about]
+title=About
+ok_bt=OK
+
+[connect_frame]
+connect_lb=Connect....
+
+[create_account]
+create_eran_acc_gb=Create Eran Account
+usr_lb=Username:
+min_chars_urs_lb=min. 6 chars
+pwd_lb=Password:
+min_chars_pwd_lb=min. 8 chars
+eran_adr_lb=Eran address:
+auth_key_lb=Auth. key:
+create_bt=Create
+
+[FileDialog_]
+title=File Dialog
+name_column=Name
+type_column=Type
+size_column=Size
+creat_time_column=Creation Time
+filename_lb=Filename:
+open_bt=Open
+cancel_bt=Cancel
+
+[FileTransfer]
+title=Incomming file
+brocken_lb=Transfer brocken!
+hash_lb=Hash:
+packname_lb=Packetname:
+ok_bt=OK
+
+[login]
+server_gb=Access Node
+host_lb=Host:
+port_lb=Port:
+login_gb=Login
+usr_lb=Username:
+pwd_lb=Password:
+join_bt=Join
+WrongLoginMSG={0}\r\nWrong logindata!
+WrongLoginTitle=Join failed!
+[nChat_frm]
+UserToolStripMenuItem=User
+BlockingToolStripMenuItem=Blocking
+OptionsToolStripMenuItem=Options
+RenewEncryptionToolStripMenuItem=Renew encryption
+ClearChatToolStripMenuItem1=Clear chat
+ClearChatToolStripMenuItem=Clear chat
+sendfile_bt=Send file
+alert_bt=Alert!
+EncryptMSG=Handshake with: RSA 2048bit\r\nChat Encryption: AES 256bit\r\nSHA1: {0}
+
+[SendFile]
+title=Send File
+
+[settings]
+title=Settings
+startmodus_gb=Startmodus
+startwindow_rb=Show Startwindow
+start_normal=Start normal
+secure_desktop_rb=Start in Secure Desktop
+scan_gb=Save Connection Access Node
+save_cb=Saved
+host_lb=Host:
+port_lb=Port:
+own_access_node_gb=Own Access Node
+listen_on_port_lb=Listen on Port:
+allow_access_node_cb=Allow Access Node
+messenger_gb=Messenger
+play_msg_sound=Play Message sound
+play_usr_online=Play useronline sound
+encryption_gb=Encryption
+auto_rec_lb=Auto reconnect:
+
+[StartWindow]
+title=Eran Start Window
+msg1=Want to Eran start in Secure Desktop?
+msg2=In Secure Desktop Every feature such as screenshots or Keylogger is disabled. This protection is especially against trojans and spyware.
+save_selection_cb=Save selection
+startNormal_bt=Start normal
+secureDesktop_bt=Start in Secure Desktop
+
+[Update]
+AvailableMSG=New update available. Do you want to install?
+AvailableMSGTitle=New Updates
+NoAvMSG=No new updates available!
+NoAvMSGTitle=Check Update
+
+[importAccount]
+title=Import Account
+pwd_lb=Password:
+path_lb=Path:
+import_bt=Import
