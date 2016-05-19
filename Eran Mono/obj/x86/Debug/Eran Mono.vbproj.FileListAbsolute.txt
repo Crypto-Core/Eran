@@ -13,3 +13,21 @@ C:\Users\Arkan\Desktop\WinCrypt\Eran Mono\Eran Mono\obj\x86\Debug\Eran_Mono.conn
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Mono\Eran Mono\obj\x86\Debug\Eran Mono.exe
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Mono\Eran Mono\obj\x86\Debug\Eran Mono.xml
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Mono\Eran Mono\obj\x86\Debug\Eran Mono.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran Mono.exe
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran Mono.xml
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran Mono.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Mono\bin\Debug\Eran Mono.exe
+C:\Users\Arkan\Desktop\Eran\Eran Mono\bin\Debug\Eran Mono.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Mono\bin\Debug\Eran Mono.xml
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.connecting_frame.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.create_account.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.login.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.main_frm.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.Resources.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran Mono.vbproj.GenerateResource.Cache
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.console_.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.nChat_frm.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.balloon.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.account_frm.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.about.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.panel_template.resources

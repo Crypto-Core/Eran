@@ -53,17 +53,17 @@ Module Update
                     If inDir = Nothing Then : Else
                         Directory.CreateDirectory(My.Application.Info.DirectoryPath & inDir)
                     End If
-                    If fileName = "\Eran.exe" Then
+                    If fileName = OS.OS_slash & "Eran.exe" Then
                         Try
                             My.Computer.FileSystem.RenameFile(System.Windows.Forms.Application.ExecutablePath, "eran.bak")
                         Catch ex As IOException
-                            File.Delete(My.Application.Info.DirectoryPath & "\eran.bak")
+                            File.Delete(My.Application.Info.DirectoryPath & OS.OS_slash & "eran.bak")
                             My.Computer.FileSystem.RenameFile(System.Windows.Forms.Application.ExecutablePath, "eran.bak")
                         End Try
 
                         Dim cacheName As String = IO.Path.GetFileName(System.Windows.Forms.Application.ExecutablePath)
                         downloadFile.DownloadFile(New Uri(https_host & getFiles), System.Windows.Forms.Application.ExecutablePath)
-                        Using sw As New IO.StreamWriter(System.Windows.Forms.Application.StartupPath & "\uninstall.bat")
+                        Using sw As New IO.StreamWriter(System.Windows.Forms.Application.StartupPath & OS.OS_slash & "uninstall.bat")
                             With sw
                                 .WriteLine("@CD /D %~d0%~p0")
                                 .WriteLine("@ERASE /Q /F """ & "eran.bak" & """")
@@ -71,7 +71,7 @@ Module Update
                                 .WriteLine("@ERASE /Q /F uninstall.bat")
                             End With
                         End Using
-                        Shell(System.Windows.Forms.Application.StartupPath & "\uninstall.bat", AppWinStyle.Hide)
+                        Shell(System.Windows.Forms.Application.StartupPath & OS.OS_slash & "uninstall.bat", AppWinStyle.Hide)
                         End
                     Else
                         downloadFile.DownloadFile(New Uri(https_host & getFiles), My.Application.Info.DirectoryPath & fileName)

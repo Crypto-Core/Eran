@@ -82,22 +82,48 @@
     <Compile Include="classes\EranAPI.vb" />
     <Compile Include="classes\GC.vb" />
     <Compile Include="classes\IniFile.vb" />
-    <Compile Include="classes\OnlineState.vb" />
     <Compile Include="classes\OS.vb" />
     <Compile Include="classes\parameter.vb" />
     <Compile Include="classes\Resources.vb" />
     <Compile Include="classes\rHash.vb" />
     <Compile Include="classes\rndPass.vb" />
+    <Compile Include="classes\Slider.vb" />
+    <Compile Include="classes\userlist.vb" />
+    <Compile Include="classes\Wave.vb" />
+    <Compile Include="main\about.Designer.vb">
+      <DependentUpon>about.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\about.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\balloon.Designer.vb">
+      <DependentUpon>balloon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\balloon.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="main\connecting_frame.Designer.vb">
       <DependentUpon>connecting_frame.vb</DependentUpon>
     </Compile>
     <Compile Include="main\connecting_frame.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="main\console.Designer.vb">
+      <DependentUpon>console.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\console.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="main\create_account.Designer.vb">
       <DependentUpon>create_account.vb</DependentUpon>
     </Compile>
     <Compile Include="main\create_account.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\panel_template.Designer.vb">
+      <DependentUpon>panel_template.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\panel_template.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main\login.Designer.vb">
@@ -111,6 +137,12 @@
     </Compile>
     <Compile Include="main\main_frm.Designer.vb">
       <DependentUpon>main_frm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main\account_frm.Designer.vb">
+      <DependentUpon>account_frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="main\account_frm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -128,13 +160,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="nChat_frm.Designer.vb">
+      <DependentUpon>nChat_frm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="nChat_frm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="main\about.resx">
+      <DependentUpon>about.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\balloon.resx">
+      <DependentUpon>balloon.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main\connecting_frame.resx">
       <DependentUpon>connecting_frame.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="main\console.resx">
+      <DependentUpon>console.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main\create_account.resx">
       <DependentUpon>create_account.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main\panel_template.resx">
+      <DependentUpon>panel_template.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main\login.resx">
       <DependentUpon>login.vb</DependentUpon>
@@ -142,11 +192,17 @@
     <EmbeddedResource Include="main\main_frm.resx">
       <DependentUpon>main_frm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="main\account_frm.resx">
+      <DependentUpon>account_frm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nChat_frm.resx">
+      <DependentUpon>nChat_frm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +245,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="eran_icon.ico" />
+    <None Include="Resources\refresh16.png" />
+    <None Include="Resources\eran_icon128.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\recon24.png" />
+    <None Include="Resources\recoff24.png" />
+    <None Include="Resources\recon.png" />
+    <None Include="Resources\recoff.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\unlock16.png" />
+    <None Include="Resources\rec1.png" />
+    <None Include="Resources\rec_now.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\lock16.png" />
+    <None Include="Resources\blockprofil.png" />
+    <None Include="Resources\adduser30.png" />
+    <None Include="Resources\1456843663_bell.png" />
+    <None Include="Resources\online16.png" />
+    <None Include="Resources\offline16.png" />
+    <None Include="Resources\busy16.png" />
     <None Include="Resources\key.png" />
     <None Include="Resources\add.png" />
   </ItemGroup>

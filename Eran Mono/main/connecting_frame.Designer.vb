@@ -23,13 +23,13 @@ Partial Class connecting_frame
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.acc_veri_img = New System.Windows.Forms.PictureBox()
         Me.con_img = New System.Windows.Forms.PictureBox()
         Me.login_img = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.acc_veri_img, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.con_img, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -39,6 +39,8 @@ Partial Class connecting_frame
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.Panel1.BackgroundImage = Global.Eran_Mono.My.Resources.Resources.trans5
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.acc_veri_img)
         Me.Panel1.Controls.Add(Me.con_img)
@@ -54,11 +56,24 @@ Partial Class connecting_frame
         Me.Panel1.Size = New System.Drawing.Size(367, 492)
         Me.Panel1.TabIndex = 0
         '
+        'Label4
+        '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Ubuntu Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(97, 184)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(158, 35)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Connecting..."
+        '
         'acc_veri_img
         '
         Me.acc_veri_img.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.acc_veri_img.BackColor = System.Drawing.Color.Transparent
         Me.acc_veri_img.Image = Global.Eran_Mono.My.Resources.Resources.accept
-        Me.acc_veri_img.Location = New System.Drawing.Point(102, 268)
+        Me.acc_veri_img.Location = New System.Drawing.Point(102, 292)
         Me.acc_veri_img.Name = "acc_veri_img"
         Me.acc_veri_img.Size = New System.Drawing.Size(16, 16)
         Me.acc_veri_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -69,8 +84,9 @@ Partial Class connecting_frame
         'con_img
         '
         Me.con_img.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.con_img.BackColor = System.Drawing.Color.Transparent
         Me.con_img.Image = Global.Eran_Mono.My.Resources.Resources.accept
-        Me.con_img.Location = New System.Drawing.Point(102, 238)
+        Me.con_img.Location = New System.Drawing.Point(102, 262)
         Me.con_img.Name = "con_img"
         Me.con_img.Size = New System.Drawing.Size(16, 16)
         Me.con_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -81,8 +97,9 @@ Partial Class connecting_frame
         'login_img
         '
         Me.login_img.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.login_img.BackColor = System.Drawing.Color.Transparent
         Me.login_img.Image = Global.Eran_Mono.My.Resources.Resources.accept
-        Me.login_img.Location = New System.Drawing.Point(102, 209)
+        Me.login_img.Location = New System.Drawing.Point(102, 233)
         Me.login_img.Name = "login_img"
         Me.login_img.Size = New System.Drawing.Size(16, 16)
         Me.login_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -94,7 +111,8 @@ Partial Class connecting_frame
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(124, 268)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Location = New System.Drawing.Point(124, 292)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 15)
         Me.Label3.TabIndex = 2
@@ -104,7 +122,8 @@ Partial Class connecting_frame
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(124, 238)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(124, 262)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(115, 15)
         Me.Label2.TabIndex = 1
@@ -114,22 +133,12 @@ Partial Class connecting_frame
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(124, 209)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(124, 233)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(121, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Check login data..."
-        '
-        'Label4
-        '
-        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Ubuntu Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(97, 160)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(158, 35)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Connecting..."
         '
         'connecting_frame
         '

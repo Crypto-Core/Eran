@@ -8,7 +8,7 @@ Module config
         If File.Exists(My.Application.Info.DirectoryPath & OS.OS_slash & "config.ini") = False Then
             File.WriteAllText(My.Application.Info.DirectoryPath & OS.OS_slash & "config.ini", My.Resources.confg)
         End If
-        config_path = My.Application.Info.DirectoryPath & "\config.ini"
+        config_path = My.Application.Info.DirectoryPath & OS.OS_slash & "config.ini"
         ini.Load(config_path)
         On Error Resume Next
         own_access_node_port = CInt(ini.GetKeyValue("config", "own_access_node_port"))

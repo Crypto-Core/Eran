@@ -402,6 +402,12 @@ language=en-EN ähnelt.
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
+</member><member name="M:Eran.rHash.HashString(System.String,Eran.rHash.HASH)">
+	<summary>
+     Diese Funktion berechnet einen Hash von einem String
+ </summary>
+	<param name="Value">Den String von dem ein Hash berechnet werden soll</param>
+	<param name="Hash">Gibt den Hashalgorithmus an</param>
 </member><member name="M:Eran.nChat_frm.encrypt_state_Tick(System.Object,System.EventArgs)">
 	<summary>
  Es wird der Status der Verschlüsselung überprüft und ob diese noch verhanden ist.
@@ -409,12 +415,6 @@ language=en-EN ähnelt.
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks></remarks>
-</member><member name="M:Eran.rHash.HashString(System.String,Eran.rHash.HASH)">
-	<summary>
-     Diese Funktion berechnet einen Hash von einem String
- </summary>
-	<param name="Value">Den String von dem ein Hash berechnet werden soll</param>
-	<param name="Hash">Gibt den Hashalgorithmus an</param>
 </member>
 </members>
 </doc>

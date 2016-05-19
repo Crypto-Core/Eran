@@ -18,6 +18,8 @@ Public Class EranAPI
     Friend Event ConnectionState(ByVal State As Boolean)
     Friend Event AuthorizedConnection(ByVal State As Boolean)
     Friend Event IncomingData(ByVal Message As Byte())
+    Friend Event KeyExchangeStatus(ByVal Status As Integer, ByVal Address As String)
+    Friend Event IncomingProfileImge(ByVal Img As Image, ByVal Address As String)
     Friend Event IncomingMessage(ByVal Address As String, ByVal Aliasname As String, ByVal ExchangeKey As String, ByVal Message As String, ByVal ProfilImage As Image)
     Friend ChatSessions As New List(Of ChatSessions_)
     Structure ChatSessions_
@@ -27,9 +29,6 @@ Public Class EranAPI
         Dim OnlineState As Integer
         Dim Encrypted As Boolean
         Dim Key As String
-    End Structure
-    Friend Structure Connection
-        Shared OnlineState As Integer = 2
     End Structure
     Friend Structure Account
         Shared Username As String
@@ -42,7 +41,25 @@ Public Class EranAPI
             Return rHash.HashString(rHash.HashString(Username + Password + AuthKey, rHash.HASH.SHA512), rHash.HASH.MD5)
         End Function
     End Structure
-
+    Friend Function SetOnlineState(ByVal State As Integer)
+        Select Case State
+            Case 0
+                Account.OnlineState = 0
+                For Each sendState As ListViewItem In main_frm.userlist_viewer.Items
+                    SendToServer("/adress " & Account.Address & "; /to " & sendState.SubItems(1).Text & "; /state 0;")
+                Next
+            Case 1
+                Account.OnlineState = 1
+                For Each sendState As ListViewItem In main_frm.userlist_viewer.Items
+                    SendToServer("/adress " & Account.Address & "; /to " & sendState.SubItems(1).Text & "; /state 1;")
+                Next
+            Case 2
+                Account.OnlineState = 2
+                For Each sendState As ListViewItem In main_frm.userlist_viewer.Items
+                    SendToServer("/adress " & Account.Address & "; /to " & sendState.SubItems(1).Text & "; /state 2;")
+                Next
+        End Select
+    End Function
     'Empfange Nachricht
     Private Sub AddItem(ByVal s As String)
         Dim decodeB64 As Byte() = Convert.FromBase64String(s)
@@ -68,7 +85,12 @@ Public Class EranAPI
                         End If
                     End If
                 End If
-                RaiseEvent IncomingData(DecryptTarget)
+                Try
+                    RaiseEvent IncomingData(DecryptTarget)
+                Catch ex As Exception
+                    MsgBox(ex.ToString)
+                End Try
+
                 Dim address As String = parameter.read_parameter("/adress ", DecryptStr)
 
                 'Sende eigenen OnlienStatus
@@ -93,6 +115,7 @@ Public Class EranAPI
                         Dim to_byte As Byte() = Convert.FromBase64String(profilimage)
                         Dim new_stream As New MemoryStream(to_byte)
                         Dim i As Image = Image.FromStream(new_stream)
+                        RaiseEvent IncomingProfileImge(i, address)
                         p.ProfilImage = i
                         ChatSessions.RemoveAt(index)
                         ChatSessions.Add(p)
@@ -102,12 +125,7 @@ Public Class EranAPI
                 'Empfange Online Status
                 If parameter.read_parameter("/state ", DecryptStr).Length > 0 Then
                     Dim usrState As Integer = CInt(parameter.read_parameter("/state ", DecryptStr))
-                    Select Case usrState
-                        Case 1
-                            SendToServer("/adress " & Account.Address & "; /to " & address & "; /state " & EranAPI.Account.OnlineState & "; /username " & Account.Aliasname & ";")
-                        Case 2
-                            SendToServer("/adress " & Account.Address & "; /to " & address & "; /state " & EranAPI.Account.OnlineState & "; /username " & Account.Aliasname & ";")
-                    End Select
+                    
                 End If
 
                 'Empfange Benutzernamen
@@ -135,11 +153,7 @@ Public Class EranAPI
                             End If
                         Else
                         End If
-                        If File.Exists(My.Application.Info.DirectoryPath & OS.OS_slash & "userlist.ini") Then
-                            Dim usrINI As New IniFile
-                            usrINI.Load(My.Application.Info.DirectoryPath & OS.OS_slash & "userlist.ini")
-                            usrINI.SetKeyValue(p.Address, "address", p.Aliasname)
-                        End If
+                        
                         p.Encrypted = current.Encrypted
                         p.Key = current.Key
                         p.OnlineState = current.OnlineState
@@ -182,7 +196,7 @@ Public Class EranAPI
                 Dim publickey_ As String = parameter.read_parameter("/publickey ", DecryptStr)
                 Dim encrypted_key As String = parameter.read_parameter("/encrypted_key ", DecryptStr)
                 handshake = parameter.read_parameter("/handshake ", DecryptStr)
-                If Connection.OnlineState = 0 Then
+                If Account.OnlineState = 0 Then
                 Else
                     Select Case handshake
                         Case CStr(0)
@@ -190,33 +204,40 @@ Public Class EranAPI
                                 Dim index As Integer = ChatSessions.FindIndex(Function(x) x.Address = address)
                                 ChatSessions.RemoveAt(index)
                             End If
+                            'Send my PublicKey Event
+                            RaiseEvent KeyExchangeStatus(0, address)
                             SendToServer("/adress " & Account.Address & "; /to " & address & ";  /publickey " & PublicKey & "; " & "/handshake 1;")
                             '/get_username 1;
                             SendToServer("/adress " & Account.Address & "; /to " & address & ";  /get_username 1; /get_profil_img 1;")
+                            'PublicKey sendet
+                            RaiseEvent KeyExchangeStatus(1, address)
                         Case CStr(1)
-                            'Empfange die Verschlüsselte RSA nachricht
-                            'adresse / key
+                            'Empfange den PublicKey des Partners
+                            RaiseEvent KeyExchangeStatus(2, address)
                             Dim rndKey As String = rndPass.Random(32)
                             Dim encrypt_now As String = RSA_encrypt(rndKey, publickey_, 2048)
                             SendToServer("/adress " & Account.Address & "; /to " & address & "; /encrypted_key " & encrypt_now & "; /handshake 2;")
+                            'Verschlüsselter Key zurück gesendet
+                            RaiseEvent KeyExchangeStatus(3, address)
                             Dim session As New ChatSessions_
                             session.Address = address
                             session.Encrypted = True
                             session.Key = rndKey
                             ChatSessions.Add(session)
+
                         Case CStr(2)
+                            RaiseEvent KeyExchangeStatus(4, address)
                             Dim decrypt_key As String = RSA_decrypt(encrypted_key, PrivateKey, 2048)
                             Dim session As New ChatSessions_
                             session.Address = address
                             session.Encrypted = True
                             session.Key = decrypt_key
                             ChatSessions.Add(session)
-                            Dim readUsrList As New IniFile
-                            readUsrList.Load(My.Application.Info.DirectoryPath & OS.OS_slash & "userlist.ini")
-                            readUsrList.SetKeyValue(address, "address", address)
-                            readUsrList.Save(My.Application.Info.DirectoryPath & OS.OS_slash & "userlist.ini")
+                            System.Threading.Thread.Sleep(1000)
+                            RaiseEvent KeyExchangeStatus(5, address)
                         Case CStr(3)
                             remove_encrypt_session(address)
+                            RaiseEvent KeyExchangeStatus(6, address)
                     End Select
                 End If
             End If
@@ -316,6 +337,31 @@ Public Class EranAPI
         End If
     End Function
 
+    Friend Function isEncryptedUser(ByVal Address As String) As Boolean
+        If ChatSessions.Exists(Function(x) x.Address = Address) = True Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Friend Function KeyExchange(ByVal Address As String) As Object
+        If ChatSessions.Exists(Function(x) x.Address = Address) = True Then
+
+            
+        Else
+            SendToServer("/adress " & Account.Address & "; /to " & Address & "; /handshake 0;")
+            Dim TimeOut As Integer = 100
+            For step_ As Integer = 0 To TimeOut
+                If ChatSessions.Exists(Function(x) x.Address = Address) = True Then
+                    SendToServer("/adress " & Account.Address & "; /to " & Address & ";  /get_username 1; /get_profil_img 1;")
+                    
+                    Exit For
+                End If
+                System.Threading.Thread.Sleep(100)
+            Next : End If
+    End Function
+
     Friend Function SendToClient(ByVal Address As String, ByVal Message As String) As Object
         If ChatSessions.Exists(Function(x) x.Address = Address) = True Then
             Dim getbytes As Byte() = System.Text.UTF8Encoding.UTF8.GetBytes(Message)
@@ -328,7 +374,7 @@ Public Class EranAPI
             Dim TimeOut As Integer = 100
             For step_ As Integer = 0 To TimeOut
                 If ChatSessions.Exists(Function(x) x.Address = Address) = True Then
-                    SendToServer("/adress " & Account.Address & "; /to " & Address & ";  /get_username 1;")
+                    SendToServer("/adress " & Account.Address & "; /to " & Address & ";  /get_username 1; /get_profil_img 1;")
                     Dim getbytes As Byte() = System.Text.UTF8Encoding.UTF8.GetBytes(Message)
                     Dim target As Byte()
                     AES.Encode(getbytes, target, ChatSessions.Find(Function(x) x.Address = Address).Key, AESEncrypt.ALGO.RIJNDAEL, 4096)

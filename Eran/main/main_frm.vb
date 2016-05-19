@@ -553,7 +553,7 @@ Public Class main_frm
             login.login_panel.Hide()
             create_account.create_account_panel.Show()
         End If
-        For Each tt In Directory.GetFiles(My.Application.Info.DirectoryPath & "\language")
+        For Each tt In Directory.GetFiles(My.Application.Info.DirectoryPath & OS.OS_slash & "language")
             Dim i As New FileInfo(tt)
             Dim newBT As ToolStripItem
             newBT = New ToolStripMenuItem
