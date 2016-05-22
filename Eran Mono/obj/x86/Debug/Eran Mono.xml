@@ -6,7 +6,15 @@ EranMono
 </name>
 </assembly>
 <members>
-<member name="P:Eran_Mono.My.Resources.Resources.ResourceManager">
+<member name="M:Eran_Mono.main_frm.vibrate_frm(System.Windows.Forms.Form,System.Int32)">
+	<summary>
+ Es wird ein Vibrate ausgeführt für ein bestimmtes Fenster.
+ </summary>
+	<param name="frm">Wähle die Form</param>
+	<param name="repeat">Wie oft das Fenster vibrieren soll.</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:Eran_Mono.My.Resources.Resources.ResourceManager">
 	<summary>
   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
 </summary>
@@ -31,6 +39,10 @@ EranMono
 	<summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.alert">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.IO.UnmanagedMemoryStream ähnlich wie System.IO.MemoryStream.
+</summary>
 </member><member name="P:Eran_Mono.My.Resources.Resources.back">
 	<summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
@@ -48,6 +60,10 @@ EranMono
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Eran_Mono.My.Resources.Resources.cancel">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.Copy_16">
 	<summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
 </summary>
@@ -126,6 +142,10 @@ EranMono
 </member><member name="P:Eran_Mono.My.Resources.Resources.refresh16">
 	<summary>
   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Eran_Mono.My.Resources.Resources.segoeuisl">
+	<summary>
+  Sucht eine lokalisierte Ressource vom Typ System.Byte[].
 </summary>
 </member><member name="P:Eran_Mono.My.Resources.Resources.trans5">
 	<summary>

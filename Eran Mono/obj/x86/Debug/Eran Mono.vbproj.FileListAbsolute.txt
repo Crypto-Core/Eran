@@ -25,9 +25,12 @@ C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.login.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.main_frm.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.Resources.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran Mono.vbproj.GenerateResource.Cache
-C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.console_.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.nChat_frm.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.balloon.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.account_frm.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.about.resources
 C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.panel_template.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.add_user.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.testform.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.fileTransfers.resources
+C:\Users\Arkan\Desktop\Eran\Eran Mono\obj\x86\Debug\Eran_Mono.settings.resources

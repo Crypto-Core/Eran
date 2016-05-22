@@ -6,3 +6,11 @@ C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Server\obj\Debug\Eran Server.vbproj.Ge
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Server\obj\Debug\Eran Server.exe
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Server\obj\Debug\Eran Server.xml
 C:\Users\Arkan\Desktop\WinCrypt\Eran\Eran Server\obj\Debug\Eran Server.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Server\obj\Debug\Eran Server.exe
+C:\Users\Arkan\Desktop\Eran\Eran Server\obj\Debug\Eran Server.xml
+C:\Users\Arkan\Desktop\Eran\Eran Server\obj\Debug\Eran Server.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Server\bin\Debug\Eran Server.exe
+C:\Users\Arkan\Desktop\Eran\Eran Server\bin\Debug\Eran Server.pdb
+C:\Users\Arkan\Desktop\Eran\Eran Server\bin\Debug\Eran Server.xml
+C:\Users\Arkan\Desktop\Eran\Eran Server\obj\Debug\Eran_Server.Resources.resources
+C:\Users\Arkan\Desktop\Eran\Eran Server\obj\Debug\Eran Server.vbproj.GenerateResource.Cache

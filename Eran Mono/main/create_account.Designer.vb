@@ -49,7 +49,7 @@ Partial Class create_account
         Me.main_panel.Controls.Add(Me.create_bt)
         Me.main_panel.Controls.Add(Me.createAcc_gb)
         Me.main_panel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.main_panel.Font = New System.Drawing.Font("Ubuntu Mono", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.main_panel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.main_panel.ForeColor = System.Drawing.Color.White
         Me.main_panel.Location = New System.Drawing.Point(0, 0)
         Me.main_panel.Name = "main_panel"
@@ -62,6 +62,7 @@ Partial Class create_account
         Me.import_acc_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.import_acc_bt.FlatAppearance.BorderSize = 0
         Me.import_acc_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.import_acc_bt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.import_acc_bt.Location = New System.Drawing.Point(216, 514)
         Me.import_acc_bt.Name = "import_acc_bt"
         Me.import_acc_bt.Size = New System.Drawing.Size(104, 23)
@@ -87,6 +88,7 @@ Partial Class create_account
         Me.create_bt.Enabled = False
         Me.create_bt.FlatAppearance.BorderSize = 0
         Me.create_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.create_bt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.create_bt.Location = New System.Drawing.Point(129, 415)
         Me.create_bt.Name = "create_bt"
         Me.create_bt.Size = New System.Drawing.Size(75, 23)
@@ -107,6 +109,7 @@ Partial Class create_account
         Me.createAcc_gb.Controls.Add(Me.password_lb)
         Me.createAcc_gb.Controls.Add(Me.username_txt)
         Me.createAcc_gb.Controls.Add(Me.username_lb)
+        Me.createAcc_gb.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.createAcc_gb.ForeColor = System.Drawing.Color.White
         Me.createAcc_gb.Location = New System.Drawing.Point(36, 159)
         Me.createAcc_gb.Name = "createAcc_gb"
@@ -120,7 +123,7 @@ Partial Class create_account
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(12, 142)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(79, 15)
+        Me.Label5.Size = New System.Drawing.Size(68, 13)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "min. 8 chars"
         '
@@ -129,7 +132,7 @@ Partial Class create_account
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(12, 72)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 15)
+        Me.Label4.Size = New System.Drawing.Size(68, 13)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "min. 6 chars"
         '
@@ -138,7 +141,7 @@ Partial Class create_account
         Me.authkey_lb.AutoSize = True
         Me.authkey_lb.Location = New System.Drawing.Point(6, 218)
         Me.authkey_lb.Name = "authkey_lb"
-        Me.authkey_lb.Size = New System.Drawing.Size(67, 15)
+        Me.authkey_lb.Size = New System.Drawing.Size(58, 13)
         Me.authkey_lb.TabIndex = 9
         Me.authkey_lb.Text = "Auth. key:"
         '
@@ -146,12 +149,12 @@ Partial Class create_account
         '
         Me.address_txt.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.address_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.address_txt.Font = New System.Drawing.Font("Ubuntu Condensed", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.address_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.address_txt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.address_txt.Location = New System.Drawing.Point(9, 183)
         Me.address_txt.Name = "address_txt"
         Me.address_txt.ReadOnly = True
-        Me.address_txt.Size = New System.Drawing.Size(246, 25)
+        Me.address_txt.Size = New System.Drawing.Size(246, 24)
         Me.address_txt.TabIndex = 8
         '
         'address_lb
@@ -159,7 +162,7 @@ Partial Class create_account
         Me.address_lb.AutoSize = True
         Me.address_lb.Location = New System.Drawing.Point(6, 165)
         Me.address_lb.Name = "address_lb"
-        Me.address_lb.Size = New System.Drawing.Size(85, 15)
+        Me.address_lb.Size = New System.Drawing.Size(76, 13)
         Me.address_lb.TabIndex = 7
         Me.address_lb.Text = "Eran address:"
         '
@@ -167,12 +170,12 @@ Partial Class create_account
         '
         Me.password_txt.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.password_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.password_txt.Font = New System.Drawing.Font("Ubuntu Condensed", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.password_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.password_txt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.password_txt.Location = New System.Drawing.Point(9, 114)
         Me.password_txt.Name = "password_txt"
         Me.password_txt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.password_txt.Size = New System.Drawing.Size(246, 25)
+        Me.password_txt.Size = New System.Drawing.Size(246, 24)
         Me.password_txt.TabIndex = 6
         '
         'password_lb
@@ -180,7 +183,7 @@ Partial Class create_account
         Me.password_lb.AutoSize = True
         Me.password_lb.Location = New System.Drawing.Point(6, 96)
         Me.password_lb.Name = "password_lb"
-        Me.password_lb.Size = New System.Drawing.Size(61, 15)
+        Me.password_lb.Size = New System.Drawing.Size(59, 13)
         Me.password_lb.TabIndex = 5
         Me.password_lb.Text = "Password:"
         '
@@ -188,11 +191,11 @@ Partial Class create_account
         '
         Me.username_txt.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.username_txt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.username_txt.Font = New System.Drawing.Font("Ubuntu Condensed", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.username_txt.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.username_txt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.username_txt.Location = New System.Drawing.Point(9, 44)
         Me.username_txt.Name = "username_txt"
-        Me.username_txt.Size = New System.Drawing.Size(246, 25)
+        Me.username_txt.Size = New System.Drawing.Size(246, 24)
         Me.username_txt.TabIndex = 4
         '
         'username_lb
@@ -200,7 +203,7 @@ Partial Class create_account
         Me.username_lb.AutoSize = True
         Me.username_lb.Location = New System.Drawing.Point(6, 26)
         Me.username_lb.Name = "username_lb"
-        Me.username_lb.Size = New System.Drawing.Size(61, 15)
+        Me.username_lb.Size = New System.Drawing.Size(61, 13)
         Me.username_lb.TabIndex = 4
         Me.username_lb.Text = "Username:"
         '

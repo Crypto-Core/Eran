@@ -375,13 +375,13 @@ Public Class main_frm
                     Else
                         Select Case handshake
                             Case CStr(0)
-
                                 Send_to_Server("/adress " & eran_adress & "; /to " & adress_ & ";  /publickey " & PublicKey & "; " & "/handshake 1;")
                             Case CStr(1)
                                 'Empfange die Verschlüsselte RSA nachricht
                                 'adresse / key
                                 Dim rndKey As String = rndPass.Random(32)
                                 Dim encrypt_now As String = RSA_encrypt(rndKey, publickey_, 2048)
+
                                 Send_to_Server("/adress " & eran_adress & "; /to " & adress_ & "; /encrypted_key " & encrypt_now & "; /handshake 2;")
                                 Dim enc_usr As New connected_usr.Encrypted_User
                                 enc_usr.Eran_adress = adress_

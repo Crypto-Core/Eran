@@ -43,7 +43,7 @@ Partial Class balloon
         Me.closebt.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.closebt.FlatAppearance.BorderSize = 0
         Me.closebt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.closebt.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.closebt.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.closebt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.closebt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.closebt.Location = New System.Drawing.Point(331, 4)
@@ -58,11 +58,11 @@ Partial Class balloon
         '
         Me.usernametxt.AutoSize = True
         Me.usernametxt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.usernametxt.Font = New System.Drawing.Font("Ubuntu", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usernametxt.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usernametxt.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.usernametxt.Location = New System.Drawing.Point(82, 9)
         Me.usernametxt.Name = "usernametxt"
-        Me.usernametxt.Size = New System.Drawing.Size(77, 24)
+        Me.usernametxt.Size = New System.Drawing.Size(77, 25)
         Me.usernametxt.TabIndex = 14
         Me.usernametxt.Text = "User XY"
         '
@@ -80,11 +80,11 @@ Partial Class balloon
         '
         Me.messagetxt.AutoSize = True
         Me.messagetxt.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.messagetxt.Font = New System.Drawing.Font("Ubuntu", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.messagetxt.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.messagetxt.ForeColor = System.Drawing.SystemColors.ScrollBar
         Me.messagetxt.Location = New System.Drawing.Point(82, 33)
         Me.messagetxt.Name = "messagetxt"
-        Me.messagetxt.Size = New System.Drawing.Size(53, 17)
+        Me.messagetxt.Size = New System.Drawing.Size(54, 17)
         Me.messagetxt.TabIndex = 16
         Me.messagetxt.Text = "User XY"
         '

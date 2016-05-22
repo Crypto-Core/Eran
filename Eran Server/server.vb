@@ -50,12 +50,16 @@ Module server
                 'Else : End If
 
                 client = server.AcceptTcpClient
-                'Console.WriteLine("Accepted Client" & vbNewLine)
+                ' Console.WriteLine("Accepted Client" & vbNewLine)
+
+
                 Dim c As New Connection
 
                 c.stream = client.GetStream
                 c.streamr = New StreamReader(c.stream)
                 c.streamw = New StreamWriter(c.stream)
+
+                ' Console.WriteLine(c.streamr.ReadLine)
                 Dim client_msg As String = Base64.FromBase64Str_to_Str(c.streamr.ReadLine) ' Empfange die Nachricht und Dekodiere den Base64 String
                 If isConnected(parameter.read_parameter("/adress ", client_msg)) = True Then
 
