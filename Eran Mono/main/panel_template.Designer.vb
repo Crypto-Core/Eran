@@ -23,46 +23,46 @@ Partial Class panel_template
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.main_panel = New System.Windows.Forms.Panel()
-        Me.back_bt = New System.Windows.Forms.Button()
+        Me.login_bt = New System.Windows.Forms.Button()
         Me.main_panel.SuspendLayout()
         Me.SuspendLayout()
         '
         'main_panel
         '
         Me.main_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.main_panel.Controls.Add(Me.back_bt)
-        Me.main_panel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.main_panel.Controls.Add(Me.login_bt)
+        Me.main_panel.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.main_panel.ForeColor = System.Drawing.Color.White
         Me.main_panel.Location = New System.Drawing.Point(12, 10)
         Me.main_panel.Name = "main_panel"
         Me.main_panel.Size = New System.Drawing.Size(719, 458)
         Me.main_panel.TabIndex = 1
         '
-        'back_bt
+        'login_bt
         '
-        Me.back_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.back_bt.BackgroundImage = Global.Eran_Mono.My.Resources.Resources.back
-        Me.back_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.back_bt.FlatAppearance.BorderSize = 0
-        Me.back_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.back_bt.Location = New System.Drawing.Point(12, 12)
-        Me.back_bt.Name = "back_bt"
-        Me.back_bt.Size = New System.Drawing.Size(32, 45)
-        Me.back_bt.TabIndex = 13
-        Me.back_bt.UseVisualStyleBackColor = False
+        Me.login_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.login_bt.BackgroundImage = Global.Eran_Mono.My.Resources.Resources.back
+        Me.login_bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.login_bt.FlatAppearance.BorderSize = 0
+        Me.login_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.login_bt.Location = New System.Drawing.Point(12, 12)
+        Me.login_bt.Name = "login_bt"
+        Me.login_bt.Size = New System.Drawing.Size(32, 45)
+        Me.login_bt.TabIndex = 13
+        Me.login_bt.UseVisualStyleBackColor = False
         '
-        'panel_template
+        'about
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(743, 479)
         Me.Controls.Add(Me.main_panel)
-        Me.Name = "panel_template"
+        Me.Name = "about"
         Me.Text = "about"
         Me.main_panel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents main_panel As System.Windows.Forms.Panel
-    Friend WithEvents back_bt As System.Windows.Forms.Button
+    Friend WithEvents login_bt As System.Windows.Forms.Button
 End Class

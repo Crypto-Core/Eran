@@ -2,7 +2,7 @@
 Public Class account_frm
 
     Private Sub TextBox1_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles username_txt.GotFocus
-        username_txt.BackColor = Color.FromArgb(40, 40, 40)
+        username_txt.BackColor = Color.FromArgb(45, 45, 45)
 
     End Sub
 
@@ -19,7 +19,7 @@ Public Class account_frm
     End Sub
 
     Private Sub TextBox1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles username_txt.LostFocus
-        username_txt.BackColor = Color.FromArgb(45, 45, 45)
+        username_txt.BackColor = Color.FromArgb(40, 40, 40)
     End Sub
 
     Private Sub login_bt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles login_bt.Click
@@ -46,9 +46,5 @@ Public Class account_frm
                 main_frm.API.SendToServer("/adress " & EranAPI.Account.Address & "; /to " & send_img.Address & "; /profil_image " & img_str & ";")
             Next
         End If
-    End Sub
-
-    Private Sub username_txt_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles username_txt.TextChanged
-
     End Sub
 End Class

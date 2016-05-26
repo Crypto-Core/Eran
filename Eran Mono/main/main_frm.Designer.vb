@@ -29,26 +29,27 @@ Partial Class main_frm
         Me.userlist_viewer = New System.Windows.Forms.ListView()
         Me.username_column = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.address_column = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.UserListViewerContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.onlineIMGlist = New System.Windows.Forms.ImageList(Me.components)
-        Me.user_top_panel = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.chat_panel = New System.Windows.Forms.Panel()
         Me.MessagesBox = New System.Windows.Forms.RichTextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.encryption_lb = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.PartnerAdress = New System.Windows.Forms.Label()
         Me.PartnerName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.InMessege = New System.Windows.Forms.TextBox()
-        Me.message_in_menu = New System.Windows.Forms.Panel()
-        Me.menu = New System.Windows.Forms.Panel()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.help_bt = New System.Windows.Forms.Button()
         Me.tools_bt = New System.Windows.Forms.Button()
         Me.account_bt = New System.Windows.Forms.Button()
         Me.users_bt = New System.Windows.Forms.Button()
         Me.file_bt = New System.Windows.Forms.Button()
-        Me.UserListViewerContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.loginStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.UsersStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AccountStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -56,14 +57,15 @@ Partial Class main_frm
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem13 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem11 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem9 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.conStateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.OnlineStateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.OnlineContext = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -74,11 +76,9 @@ Partial Class main_frm
         Me.profile_img = New System.Windows.Forms.PictureBox()
         Me.lock_bt = New System.Windows.Forms.Button()
         Me.PartnerProfilImage = New System.Windows.Forms.PictureBox()
-        Me.rec_bt = New System.Windows.Forms.Button()
-        Me.alert_bt = New System.Windows.Forms.Button()
-        Me.sendfile_bt = New System.Windows.Forms.Button()
-        Me.DeleteUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyAddressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.adduser_bt = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
@@ -92,7 +92,8 @@ Partial Class main_frm
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.user_top_panel.SuspendLayout()
+        Me.UserListViewerContext.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
@@ -100,9 +101,8 @@ Partial Class main_frm
         Me.SplitContainer2.SuspendLayout()
         Me.chat_panel.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.message_in_menu.SuspendLayout()
-        Me.menu.SuspendLayout()
-        Me.UserListViewerContext.SuspendLayout()
+        Me.Panel5.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.loginStrip.SuspendLayout()
         Me.UsersStrip.SuspendLayout()
         Me.AccountStrip.SuspendLayout()
@@ -118,31 +118,31 @@ Partial Class main_frm
         '
         Me.main_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.main_panel.Controls.Add(Me.SplitContainer1)
-        Me.main_panel.Controls.Add(Me.menu)
+        Me.main_panel.Controls.Add(Me.Panel1)
         Me.main_panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.main_panel.Location = New System.Drawing.Point(0, 0)
         Me.main_panel.Name = "main_panel"
-        Me.main_panel.Size = New System.Drawing.Size(988, 561)
+        Me.main_panel.Size = New System.Drawing.Size(933, 576)
         Me.main_panel.TabIndex = 0
         '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 29)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 35)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.Controls.Add(Me.userlist_viewer)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.user_top_panel)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Panel2)
         Me.SplitContainer1.Panel1MinSize = 246
         '
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.CausesValidation = False
         Me.SplitContainer1.Panel2.Controls.Add(Me.Panel3)
-        Me.SplitContainer1.Size = New System.Drawing.Size(988, 532)
+        Me.SplitContainer1.Size = New System.Drawing.Size(933, 541)
         Me.SplitContainer1.SplitterDistance = 292
         Me.SplitContainer1.TabIndex = 6
         '
@@ -151,8 +151,9 @@ Partial Class main_frm
         Me.userlist_viewer.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.userlist_viewer.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.userlist_viewer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.username_column, Me.address_column})
+        Me.userlist_viewer.ContextMenuStrip = Me.UserListViewerContext
         Me.userlist_viewer.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.userlist_viewer.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.userlist_viewer.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.userlist_viewer.ForeColor = System.Drawing.SystemColors.Window
         Me.userlist_viewer.FullRowSelect = True
         Me.userlist_viewer.LargeImageList = Me.onlineIMGlist
@@ -160,7 +161,7 @@ Partial Class main_frm
         Me.userlist_viewer.MultiSelect = False
         Me.userlist_viewer.Name = "userlist_viewer"
         Me.userlist_viewer.ShowItemToolTips = True
-        Me.userlist_viewer.Size = New System.Drawing.Size(292, 408)
+        Me.userlist_viewer.Size = New System.Drawing.Size(292, 417)
         Me.userlist_viewer.SmallImageList = Me.onlineIMGlist
         Me.userlist_viewer.TabIndex = 2
         Me.userlist_viewer.UseCompatibleStateImageBehavior = False
@@ -175,6 +176,18 @@ Partial Class main_frm
         '
         Me.address_column.Text = "Address"
         '
+        'UserListViewerContext
+        '
+        Me.UserListViewerContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteUserToolStripMenuItem})
+        Me.UserListViewerContext.Name = "UserListViewerContext"
+        Me.UserListViewerContext.Size = New System.Drawing.Size(133, 26)
+        '
+        'DeleteUserToolStripMenuItem
+        '
+        Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
+        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.DeleteUserToolStripMenuItem.Text = "Delete user"
+        '
         'onlineIMGlist
         '
         Me.onlineIMGlist.ImageStream = CType(resources.GetObject("onlineIMGlist.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -183,16 +196,16 @@ Partial Class main_frm
         Me.onlineIMGlist.Images.SetKeyName(1, "busy16.png")
         Me.onlineIMGlist.Images.SetKeyName(2, "online16.png")
         '
-        'user_top_panel
+        'Panel2
         '
-        Me.user_top_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.user_top_panel.Controls.Add(Me.onlinestatus_bt)
-        Me.user_top_panel.Controls.Add(Me.profile_img)
-        Me.user_top_panel.Dock = System.Windows.Forms.DockStyle.Top
-        Me.user_top_panel.Location = New System.Drawing.Point(0, 0)
-        Me.user_top_panel.Name = "user_top_panel"
-        Me.user_top_panel.Size = New System.Drawing.Size(292, 124)
-        Me.user_top_panel.TabIndex = 1
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.onlinestatus_bt)
+        Me.Panel2.Controls.Add(Me.profile_img)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(292, 124)
+        Me.Panel2.TabIndex = 1
         '
         'Panel3
         '
@@ -201,7 +214,7 @@ Partial Class main_frm
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(692, 532)
+        Me.Panel3.Size = New System.Drawing.Size(637, 541)
         Me.Panel3.TabIndex = 5
         '
         'SplitContainer2
@@ -220,10 +233,10 @@ Partial Class main_frm
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.InMessege)
-        Me.SplitContainer2.Panel2.Controls.Add(Me.rec_bt)
-        Me.SplitContainer2.Panel2.Controls.Add(Me.message_in_menu)
-        Me.SplitContainer2.Size = New System.Drawing.Size(692, 532)
-        Me.SplitContainer2.SplitterDistance = 445
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Button5)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.Panel5)
+        Me.SplitContainer2.Size = New System.Drawing.Size(637, 541)
+        Me.SplitContainer2.SplitterDistance = 468
         Me.SplitContainer2.SplitterWidth = 2
         Me.SplitContainer2.TabIndex = 0
         '
@@ -234,7 +247,7 @@ Partial Class main_frm
         Me.chat_panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.chat_panel.Location = New System.Drawing.Point(0, 0)
         Me.chat_panel.Name = "chat_panel"
-        Me.chat_panel.Size = New System.Drawing.Size(692, 445)
+        Me.chat_panel.Size = New System.Drawing.Size(637, 468)
         Me.chat_panel.TabIndex = 2
         '
         'MessagesBox
@@ -242,23 +255,22 @@ Partial Class main_frm
         Me.MessagesBox.AutoWordSelection = True
         Me.MessagesBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer), CType(CType(55, Byte), Integer))
         Me.MessagesBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.MessagesBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.MessagesBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MessagesBox.Font = New System.Drawing.Font("Segoe UI Semilight", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MessagesBox.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MessagesBox.ForeColor = System.Drawing.Color.White
         Me.MessagesBox.HideSelection = False
         Me.MessagesBox.Location = New System.Drawing.Point(0, 91)
         Me.MessagesBox.Name = "MessagesBox"
         Me.MessagesBox.ReadOnly = True
         Me.MessagesBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.MessagesBox.Size = New System.Drawing.Size(692, 354)
+        Me.MessagesBox.Size = New System.Drawing.Size(637, 377)
         Me.MessagesBox.TabIndex = 1
-        Me.MessagesBox.Text = " "
+        Me.MessagesBox.Text = ""
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.Panel4.Controls.Add(Me.encryption_lb)
+        Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.lock_bt)
         Me.Panel4.Controls.Add(Me.PartnerProfilImage)
         Me.Panel4.Controls.Add(Me.PartnerAdress)
@@ -266,39 +278,35 @@ Partial Class main_frm
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(692, 91)
+        Me.Panel4.Size = New System.Drawing.Size(637, 91)
         Me.Panel4.TabIndex = 0
         '
-        'encryption_lb
+        'Label2
         '
-        Me.encryption_lb.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.encryption_lb.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.encryption_lb.Location = New System.Drawing.Point(570, 65)
-        Me.encryption_lb.Name = "encryption_lb"
-        Me.encryption_lb.Size = New System.Drawing.Size(117, 18)
-        Me.encryption_lb.TabIndex = 14
-        Me.encryption_lb.Text = "..."
-        Me.encryption_lb.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.Location = New System.Drawing.Point(515, 65)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(117, 18)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "..."
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'PartnerAdress
         '
         Me.PartnerAdress.AutoSize = True
-        Me.PartnerAdress.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PartnerAdress.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PartnerAdress.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PartnerAdress.Location = New System.Drawing.Point(88, 53)
+        Me.PartnerAdress.Location = New System.Drawing.Point(87, 47)
         Me.PartnerAdress.Name = "PartnerAdress"
-        Me.PartnerAdress.Size = New System.Drawing.Size(48, 13)
+        Me.PartnerAdress.Size = New System.Drawing.Size(49, 15)
         Me.PartnerAdress.TabIndex = 1
         Me.PartnerAdress.Text = "Address"
         '
         'PartnerName
         '
         Me.PartnerName.AutoSize = True
-        Me.PartnerName.Font = New System.Drawing.Font("Segoe UI Light", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PartnerName.Font = New System.Drawing.Font("Ubuntu Condensed", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PartnerName.Location = New System.Drawing.Point(83, 8)
         Me.PartnerName.Name = "PartnerName"
-        Me.PartnerName.Size = New System.Drawing.Size(155, 45)
+        Me.PartnerName.Size = New System.Drawing.Size(136, 39)
         Me.PartnerName.TabIndex = 0
         Me.PartnerName.Text = "Username"
         '
@@ -307,11 +315,11 @@ Partial Class main_frm
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Ubuntu", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(241, 208)
+        Me.Label1.Location = New System.Drawing.Point(213, 220)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(261, 45)
+        Me.Label1.Size = New System.Drawing.Size(210, 29)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Select a Chat user"
         '
@@ -321,39 +329,37 @@ Partial Class main_frm
         Me.InMessege.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.InMessege.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InMessege.Enabled = False
-        Me.InMessege.Font = New System.Drawing.Font("Segoe UI Semilight", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InMessege.Font = New System.Drawing.Font("Ubuntu", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InMessege.ForeColor = System.Drawing.SystemColors.Info
-        Me.InMessege.Location = New System.Drawing.Point(0, 36)
+        Me.InMessege.Location = New System.Drawing.Point(0, 26)
         Me.InMessege.Multiline = True
         Me.InMessege.Name = "InMessege"
-        Me.InMessege.Size = New System.Drawing.Size(650, 49)
+        Me.InMessege.Size = New System.Drawing.Size(595, 45)
         Me.InMessege.TabIndex = 0
         '
-        'message_in_menu
+        'Panel5
         '
-        Me.message_in_menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.message_in_menu.Controls.Add(Me.alert_bt)
-        Me.message_in_menu.Controls.Add(Me.sendfile_bt)
-        Me.message_in_menu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.message_in_menu.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.message_in_menu.Location = New System.Drawing.Point(0, 0)
-        Me.message_in_menu.Name = "message_in_menu"
-        Me.message_in_menu.Size = New System.Drawing.Size(692, 36)
-        Me.message_in_menu.TabIndex = 1
+        Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Panel5.Controls.Add(Me.Button2)
+        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(637, 26)
+        Me.Panel5.TabIndex = 1
         '
-        'menu
+        'Panel1
         '
-        Me.menu.Controls.Add(Me.help_bt)
-        Me.menu.Controls.Add(Me.tools_bt)
-        Me.menu.Controls.Add(Me.account_bt)
-        Me.menu.Controls.Add(Me.users_bt)
-        Me.menu.Controls.Add(Me.file_bt)
-        Me.menu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.menu.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.menu.Location = New System.Drawing.Point(0, 0)
-        Me.menu.Name = "menu"
-        Me.menu.Size = New System.Drawing.Size(988, 29)
-        Me.menu.TabIndex = 0
+        Me.Panel1.Controls.Add(Me.help_bt)
+        Me.Panel1.Controls.Add(Me.tools_bt)
+        Me.Panel1.Controls.Add(Me.account_bt)
+        Me.Panel1.Controls.Add(Me.users_bt)
+        Me.Panel1.Controls.Add(Me.file_bt)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(933, 35)
+        Me.Panel1.TabIndex = 0
         '
         'help_bt
         '
@@ -362,9 +368,9 @@ Partial Class main_frm
         Me.help_bt.Dock = System.Windows.Forms.DockStyle.Left
         Me.help_bt.FlatAppearance.BorderSize = 0
         Me.help_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.help_bt.Location = New System.Drawing.Point(249, 0)
+        Me.help_bt.Location = New System.Drawing.Point(200, 0)
         Me.help_bt.Name = "help_bt"
-        Me.help_bt.Size = New System.Drawing.Size(52, 29)
+        Me.help_bt.Size = New System.Drawing.Size(47, 35)
         Me.help_bt.TabIndex = 12
         Me.help_bt.Text = "Help"
         Me.help_bt.UseVisualStyleBackColor = False
@@ -376,9 +382,9 @@ Partial Class main_frm
         Me.tools_bt.Dock = System.Windows.Forms.DockStyle.Left
         Me.tools_bt.FlatAppearance.BorderSize = 0
         Me.tools_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.tools_bt.Location = New System.Drawing.Point(194, 0)
+        Me.tools_bt.Location = New System.Drawing.Point(153, 0)
         Me.tools_bt.Name = "tools_bt"
-        Me.tools_bt.Size = New System.Drawing.Size(55, 29)
+        Me.tools_bt.Size = New System.Drawing.Size(47, 35)
         Me.tools_bt.TabIndex = 11
         Me.tools_bt.Text = "Tools"
         Me.tools_bt.UseVisualStyleBackColor = False
@@ -390,9 +396,9 @@ Partial Class main_frm
         Me.account_bt.Dock = System.Windows.Forms.DockStyle.Left
         Me.account_bt.FlatAppearance.BorderSize = 0
         Me.account_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.account_bt.Location = New System.Drawing.Point(118, 0)
+        Me.account_bt.Location = New System.Drawing.Point(94, 0)
         Me.account_bt.Name = "account_bt"
-        Me.account_bt.Size = New System.Drawing.Size(76, 29)
+        Me.account_bt.Size = New System.Drawing.Size(59, 35)
         Me.account_bt.TabIndex = 10
         Me.account_bt.Text = "Account"
         Me.account_bt.UseVisualStyleBackColor = False
@@ -404,9 +410,9 @@ Partial Class main_frm
         Me.users_bt.Dock = System.Windows.Forms.DockStyle.Left
         Me.users_bt.FlatAppearance.BorderSize = 0
         Me.users_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.users_bt.Location = New System.Drawing.Point(59, 0)
+        Me.users_bt.Location = New System.Drawing.Point(47, 0)
         Me.users_bt.Name = "users_bt"
-        Me.users_bt.Size = New System.Drawing.Size(59, 29)
+        Me.users_bt.Size = New System.Drawing.Size(47, 35)
         Me.users_bt.TabIndex = 9
         Me.users_bt.Text = "Users"
         Me.users_bt.UseVisualStyleBackColor = False
@@ -420,56 +426,48 @@ Partial Class main_frm
         Me.file_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.file_bt.Location = New System.Drawing.Point(0, 0)
         Me.file_bt.Name = "file_bt"
-        Me.file_bt.Size = New System.Drawing.Size(59, 29)
+        Me.file_bt.Size = New System.Drawing.Size(47, 35)
         Me.file_bt.TabIndex = 8
         Me.file_bt.Text = "Login"
         Me.file_bt.UseVisualStyleBackColor = False
         '
-        'UserListViewerContext
-        '
-        Me.UserListViewerContext.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.UserListViewerContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteUserToolStripMenuItem, Me.CopyAddressToolStripMenuItem})
-        Me.UserListViewerContext.Name = "UserListViewerContext"
-        Me.UserListViewerContext.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.UserListViewerContext.Size = New System.Drawing.Size(148, 48)
-        '
         'loginStrip
         '
         Me.loginStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.loginStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.loginStrip.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.loginStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TestToolStripMenuItem})
         Me.loginStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.loginStrip.Name = "loginStrip"
         Me.loginStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.loginStrip.Size = New System.Drawing.Size(95, 26)
+        Me.loginStrip.Size = New System.Drawing.Size(105, 26)
         '
         'UsersStrip
         '
         Me.UsersStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.UsersStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsersStrip.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsersStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.adduser_bt})
         Me.UsersStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.UsersStrip.Name = "loginStrip"
         Me.UsersStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.UsersStrip.Size = New System.Drawing.Size(125, 26)
+        Me.UsersStrip.Size = New System.Drawing.Size(129, 26)
         '
         'AccountStrip
         '
         Me.AccountStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.AccountStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AccountStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ExportAccountToolStripMenuItem, Me.ImportAccountToolStripMenuItem, Me.ToolStripMenuItem13, Me.ToolStripMenuItem11})
+        Me.AccountStrip.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AccountStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem2, Me.ExportAccountToolStripMenuItem, Me.ImportAccountToolStripMenuItem, Me.ToolStripMenuItem11})
         Me.AccountStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.AccountStrip.Name = "loginStrip"
         Me.AccountStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.AccountStrip.ShowImageMargin = False
         Me.AccountStrip.ShowItemToolTips = False
-        Me.AccountStrip.Size = New System.Drawing.Size(131, 136)
+        Me.AccountStrip.Size = New System.Drawing.Size(140, 114)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.ToolStripMenuItem1.Text = "Disconnect"
         '
         'ToolStripMenuItem2
@@ -477,84 +475,90 @@ Partial Class main_frm
         Me.ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem5, Me.ToolStripMenuItem6})
         Me.ToolStripMenuItem2.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(130, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 22)
         Me.ToolStripMenuItem2.Text = "Connection"
         '
         'ExportAccountToolStripMenuItem
         '
         Me.ExportAccountToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ExportAccountToolStripMenuItem.Name = "ExportAccountToolStripMenuItem"
-        Me.ExportAccountToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.ExportAccountToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ExportAccountToolStripMenuItem.Text = "Export Account"
         '
         'ImportAccountToolStripMenuItem
         '
         Me.ImportAccountToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ImportAccountToolStripMenuItem.Name = "ImportAccountToolStripMenuItem"
-        Me.ImportAccountToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.ImportAccountToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ImportAccountToolStripMenuItem.Text = "Import Account"
-        '
-        'ToolStripMenuItem13
-        '
-        Me.ToolStripMenuItem13.ForeColor = System.Drawing.Color.White
-        Me.ToolStripMenuItem13.Name = "ToolStripMenuItem13"
-        Me.ToolStripMenuItem13.Size = New System.Drawing.Size(130, 22)
-        Me.ToolStripMenuItem13.Text = "Setting"
         '
         'ToolStripMenuItem11
         '
         Me.ToolStripMenuItem11.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem11.Name = "ToolStripMenuItem11"
-        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(130, 22)
-        Me.ToolStripMenuItem11.Text = "File Transfers"
+        Me.ToolStripMenuItem11.Size = New System.Drawing.Size(139, 22)
+        Me.ToolStripMenuItem11.Text = "Setting"
         '
         'ToolsStrip
         '
         Me.ToolsStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ToolsStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolsStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3, Me.ToolStripMenuItem7})
+        Me.ToolsStrip.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolsStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3, Me.ToolStripMenuItem7, Me.ToolStripMenuItem8})
         Me.ToolsStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.ToolsStrip.Name = "loginStrip"
         Me.ToolsStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.ToolsStrip.Size = New System.Drawing.Size(132, 48)
+        Me.ToolsStrip.Size = New System.Drawing.Size(135, 70)
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(131, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(134, 22)
         Me.ToolStripMenuItem3.Text = "Setting"
         '
         'ToolStripMenuItem7
         '
         Me.ToolStripMenuItem7.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(131, 22)
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(134, 22)
         Me.ToolStripMenuItem7.Text = "Send Ping"
+        '
+        'ToolStripMenuItem8
+        '
+        Me.ToolStripMenuItem8.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem8.Name = "ToolStripMenuItem8"
+        Me.ToolStripMenuItem8.Size = New System.Drawing.Size(134, 22)
+        Me.ToolStripMenuItem8.Text = "Language"
         '
         'HelpStrip
         '
         Me.HelpStrip.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.HelpStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HelpStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.ToolStripMenuItem9})
+        Me.HelpStrip.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4, Me.ToolStripMenuItem9, Me.TestToolStripMenuItem1})
         Me.HelpStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.HelpStrip.Name = "loginStrip"
         Me.HelpStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.HelpStrip.Size = New System.Drawing.Size(152, 48)
+        Me.HelpStrip.Size = New System.Drawing.Size(153, 70)
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(151, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem4.Text = "About"
         '
         'ToolStripMenuItem9
         '
         Me.ToolStripMenuItem9.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem9.Name = "ToolStripMenuItem9"
-        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(151, 22)
+        Me.ToolStripMenuItem9.Size = New System.Drawing.Size(152, 22)
         Me.ToolStripMenuItem9.Text = "Check Update"
+        '
+        'TestToolStripMenuItem1
+        '
+        Me.TestToolStripMenuItem1.Name = "TestToolStripMenuItem1"
+        Me.TestToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.TestToolStripMenuItem1.Text = "Test"
         '
         'conStateTimer
         '
@@ -566,12 +570,12 @@ Partial Class main_frm
         'OnlineContext
         '
         Me.OnlineContext.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.OnlineContext.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OnlineContext.Font = New System.Drawing.Font("Ubuntu Mono", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OnlineContext.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem10, Me.BusyToolStripMenuItem, Me.OfflineToolStripMenuItem})
         Me.OnlineContext.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.OnlineContext.Name = "loginStrip"
         Me.OnlineContext.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.OnlineContext.Size = New System.Drawing.Size(111, 70)
+        Me.OnlineContext.Size = New System.Drawing.Size(123, 70)
         '
         'NotifyIcon1
         '
@@ -597,12 +601,11 @@ Partial Class main_frm
         Me.onlinestatus_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.onlinestatus_bt.FlatAppearance.BorderSize = 0
         Me.onlinestatus_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.onlinestatus_bt.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.onlinestatus_bt.Image = Global.Eran_Mono.My.Resources.Resources.offline16
         Me.onlinestatus_bt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.onlinestatus_bt.Location = New System.Drawing.Point(90, 86)
+        Me.onlinestatus_bt.Location = New System.Drawing.Point(99, 92)
         Me.onlinestatus_bt.Name = "onlinestatus_bt"
-        Me.onlinestatus_bt.Size = New System.Drawing.Size(113, 32)
+        Me.onlinestatus_bt.Size = New System.Drawing.Size(105, 26)
         Me.onlinestatus_bt.TabIndex = 12
         Me.onlinestatus_bt.Text = "Offline"
         Me.onlinestatus_bt.UseVisualStyleBackColor = False
@@ -629,11 +632,10 @@ Partial Class main_frm
         Me.lock_bt.FlatAppearance.BorderSize = 0
         Me.lock_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lock_bt.Image = Global.Eran_Mono.My.Resources.Resources.unlock
-        Me.lock_bt.Location = New System.Drawing.Point(605, 18)
+        Me.lock_bt.Location = New System.Drawing.Point(550, 18)
         Me.lock_bt.Name = "lock_bt"
         Me.lock_bt.Size = New System.Drawing.Size(45, 44)
         Me.lock_bt.TabIndex = 13
-        Me.lock_bt.Text = "&"
         Me.lock_bt.UseVisualStyleBackColor = False
         '
         'PartnerProfilImage
@@ -648,79 +650,60 @@ Partial Class main_frm
         Me.PartnerProfilImage.TabIndex = 13
         Me.PartnerProfilImage.TabStop = False
         '
-        'rec_bt
+        'Button5
         '
-        Me.rec_bt.AutoSize = True
-        Me.rec_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.rec_bt.Dock = System.Windows.Forms.DockStyle.Right
-        Me.rec_bt.FlatAppearance.BorderSize = 0
-        Me.rec_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.rec_bt.Image = Global.Eran_Mono.My.Resources.Resources.recoff24
-        Me.rec_bt.Location = New System.Drawing.Point(650, 36)
-        Me.rec_bt.Name = "rec_bt"
-        Me.rec_bt.Size = New System.Drawing.Size(42, 49)
-        Me.rec_bt.TabIndex = 18
-        Me.rec_bt.UseVisualStyleBackColor = False
+        Me.Button5.AutoSize = True
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Button5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Image = Global.Eran_Mono.My.Resources.Resources.recoff24
+        Me.Button5.Location = New System.Drawing.Point(595, 26)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(42, 45)
+        Me.Button5.TabIndex = 18
+        Me.Button5.UseVisualStyleBackColor = False
         '
-        'alert_bt
+        'Button2
         '
-        Me.alert_bt.AutoSize = True
-        Me.alert_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.alert_bt.Dock = System.Windows.Forms.DockStyle.Left
-        Me.alert_bt.FlatAppearance.BorderSize = 0
-        Me.alert_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.alert_bt.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.alert_bt.Image = Global.Eran_Mono.My.Resources.Resources._1456843663_bell
-        Me.alert_bt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.alert_bt.Location = New System.Drawing.Point(99, 0)
-        Me.alert_bt.Name = "alert_bt"
-        Me.alert_bt.Size = New System.Drawing.Size(78, 36)
-        Me.alert_bt.TabIndex = 14
-        Me.alert_bt.Text = "Alert!"
-        Me.alert_bt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.alert_bt.UseVisualStyleBackColor = False
+        Me.Button2.AutoSize = True
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = Global.Eran_Mono.My.Resources.Resources._1456843663_bell
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(88, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(70, 26)
+        Me.Button2.TabIndex = 14
+        Me.Button2.Text = "Alert!"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = False
         '
-        'sendfile_bt
+        'Button1
         '
-        Me.sendfile_bt.AutoSize = True
-        Me.sendfile_bt.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.sendfile_bt.Dock = System.Windows.Forms.DockStyle.Left
-        Me.sendfile_bt.FlatAppearance.BorderSize = 0
-        Me.sendfile_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.sendfile_bt.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sendfile_bt.Image = Global.Eran_Mono.My.Resources.Resources.add
-        Me.sendfile_bt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.sendfile_bt.Location = New System.Drawing.Point(0, 0)
-        Me.sendfile_bt.Name = "sendfile_bt"
-        Me.sendfile_bt.Size = New System.Drawing.Size(99, 36)
-        Me.sendfile_bt.TabIndex = 13
-        Me.sendfile_bt.Text = "Send file"
-        Me.sendfile_bt.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.sendfile_bt.UseVisualStyleBackColor = False
-        '
-        'DeleteUserToolStripMenuItem
-        '
-        Me.DeleteUserToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.DeleteUserToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.DeleteUserToolStripMenuItem.Image = Global.Eran_Mono.My.Resources.Resources.cancel
-        Me.DeleteUserToolStripMenuItem.Name = "DeleteUserToolStripMenuItem"
-        Me.DeleteUserToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
-        Me.DeleteUserToolStripMenuItem.Text = "Delete user"
-        '
-        'CopyAddressToolStripMenuItem
-        '
-        Me.CopyAddressToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.CopyAddressToolStripMenuItem.Image = Global.Eran_Mono.My.Resources.Resources.Copy_16
-        Me.CopyAddressToolStripMenuItem.Name = "CopyAddressToolStripMenuItem"
-        Me.CopyAddressToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
-        Me.CopyAddressToolStripMenuItem.Text = "Copy Address"
+        Me.Button1.AutoSize = True
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = Global.Eran_Mono.My.Resources.Resources.add
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(88, 26)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Send file"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'TestToolStripMenuItem
         '
         Me.TestToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.TestToolStripMenuItem.Image = Global.Eran_Mono.My.Resources.Resources.cancel
         Me.TestToolStripMenuItem.Name = "TestToolStripMenuItem"
-        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(94, 22)
+        Me.TestToolStripMenuItem.Size = New System.Drawing.Size(104, 22)
         Me.TestToolStripMenuItem.Text = "Exit"
         '
         'adduser_bt
@@ -728,7 +711,7 @@ Partial Class main_frm
         Me.adduser_bt.ForeColor = System.Drawing.Color.White
         Me.adduser_bt.Image = Global.Eran_Mono.My.Resources.Resources.add
         Me.adduser_bt.Name = "adduser_bt"
-        Me.adduser_bt.Size = New System.Drawing.Size(124, 22)
+        Me.adduser_bt.Size = New System.Drawing.Size(128, 22)
         Me.adduser_bt.Text = "Add User"
         '
         'ToolStripMenuItem5
@@ -737,7 +720,7 @@ Partial Class main_frm
         Me.ToolStripMenuItem5.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem5.Image = Global.Eran_Mono.My.Resources.Resources.key
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(164, 22)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(170, 22)
         Me.ToolStripMenuItem5.Text = "Show PublicKey"
         '
         'ToolStripMenuItem6
@@ -746,7 +729,7 @@ Partial Class main_frm
         Me.ToolStripMenuItem6.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem6.Image = Global.Eran_Mono.My.Resources.Resources.key
         Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(164, 22)
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(170, 22)
         Me.ToolStripMenuItem6.Text = "Show Server key"
         '
         'ToolStripMenuItem10
@@ -754,7 +737,7 @@ Partial Class main_frm
         Me.ToolStripMenuItem10.ForeColor = System.Drawing.Color.White
         Me.ToolStripMenuItem10.Image = Global.Eran_Mono.My.Resources.Resources.online16
         Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(110, 22)
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(122, 22)
         Me.ToolStripMenuItem10.Text = "Online"
         '
         'BusyToolStripMenuItem
@@ -762,7 +745,7 @@ Partial Class main_frm
         Me.BusyToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.BusyToolStripMenuItem.Image = Global.Eran_Mono.My.Resources.Resources.busy16
         Me.BusyToolStripMenuItem.Name = "BusyToolStripMenuItem"
-        Me.BusyToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.BusyToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.BusyToolStripMenuItem.Text = "Busy"
         '
         'OfflineToolStripMenuItem
@@ -770,7 +753,7 @@ Partial Class main_frm
         Me.OfflineToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.OfflineToolStripMenuItem.Image = Global.Eran_Mono.My.Resources.Resources.offline16
         Me.OfflineToolStripMenuItem.Name = "OfflineToolStripMenuItem"
-        Me.OfflineToolStripMenuItem.Size = New System.Drawing.Size(110, 22)
+        Me.OfflineToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.OfflineToolStripMenuItem.Text = "Offline"
         '
         'ToolStripMenuItem12
@@ -783,16 +766,14 @@ Partial Class main_frm
         '
         'main_frm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(988, 561)
+        Me.ClientSize = New System.Drawing.Size(933, 576)
         Me.Controls.Add(Me.main_panel)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Ubuntu Mono", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.KeyPreview = True
-        Me.MinimumSize = New System.Drawing.Size(660, 428)
         Me.Name = "main_frm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Eran Mono"
@@ -801,8 +782,9 @@ Partial Class main_frm
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        Me.user_top_panel.ResumeLayout(False)
-        Me.user_top_panel.PerformLayout()
+        Me.UserListViewerContext.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.PerformLayout()
@@ -813,11 +795,10 @@ Partial Class main_frm
         Me.chat_panel.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.message_in_menu.ResumeLayout(False)
-        Me.message_in_menu.PerformLayout()
-        Me.menu.ResumeLayout(False)
-        Me.menu.PerformLayout()
-        Me.UserListViewerContext.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.loginStrip.ResumeLayout(False)
         Me.UsersStrip.ResumeLayout(False)
         Me.AccountStrip.ResumeLayout(False)
@@ -831,8 +812,8 @@ Partial Class main_frm
 
     End Sub
     Friend WithEvents main_panel As System.Windows.Forms.Panel
-    Friend WithEvents user_top_panel As System.Windows.Forms.Panel
-    Friend WithEvents menu As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents file_bt As System.Windows.Forms.Button
     Friend WithEvents loginStrip As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents TestToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -857,6 +838,7 @@ Partial Class main_frm
     Friend WithEvents ExportAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImportAccountToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem7 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem8 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem9 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents onlineIMGlist As System.Windows.Forms.ImageList
     Friend WithEvents UserListViewerContext As System.Windows.Forms.ContextMenuStrip
@@ -879,19 +861,18 @@ Partial Class main_frm
     Friend WithEvents username_column As System.Windows.Forms.ColumnHeader
     Friend WithEvents address_column As System.Windows.Forms.ColumnHeader
     Friend WithEvents MessagesBox As System.Windows.Forms.RichTextBox
-    Friend WithEvents message_in_menu As System.Windows.Forms.Panel
-    Friend WithEvents alert_bt As System.Windows.Forms.Button
-    Friend WithEvents sendfile_bt As System.Windows.Forms.Button
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents lock_bt As System.Windows.Forms.Button
-    Friend WithEvents rec_bt As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents chat_panel As System.Windows.Forms.Panel
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents encryption_lb As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Slide As System.Windows.Forms.Timer
+    Friend WithEvents TestToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents encryption_context As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ToolStripMenuItem12 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CopyAddressToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem13 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

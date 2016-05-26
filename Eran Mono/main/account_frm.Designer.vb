@@ -41,7 +41,7 @@ Partial Class account_frm
         Me.Panel1.Controls.Add(Me.login_bt)
         Me.Panel1.Controls.Add(Me.username_txt)
         Me.Panel1.Controls.Add(Me.profile_img)
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Font = New System.Drawing.Font("Ubuntu", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(0, 12)
         Me.Panel1.Name = "Panel1"
@@ -52,10 +52,9 @@ Partial Class account_frm
         '
         Me.notification_cb.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.notification_cb.AutoSize = True
-        Me.notification_cb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.notification_cb.Location = New System.Drawing.Point(45, 274)
+        Me.notification_cb.Location = New System.Drawing.Point(109, 208)
         Me.notification_cb.Name = "notification_cb"
-        Me.notification_cb.Size = New System.Drawing.Size(107, 25)
+        Me.notification_cb.Size = New System.Drawing.Size(85, 20)
         Me.notification_cb.TabIndex = 16
         Me.notification_cb.Text = "notification"
         Me.notification_cb.UseVisualStyleBackColor = True
@@ -63,14 +62,12 @@ Partial Class account_frm
         'eran_adr_txt
         '
         Me.eran_adr_txt.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.eran_adr_txt.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eran_adr_txt.ForeColor = System.Drawing.SystemColors.Control
-        Me.eran_adr_txt.Location = New System.Drawing.Point(41, 222)
+        Me.eran_adr_txt.Location = New System.Drawing.Point(106, 164)
         Me.eran_adr_txt.Name = "eran_adr_txt"
-        Me.eran_adr_txt.Size = New System.Drawing.Size(445, 28)
+        Me.eran_adr_txt.Size = New System.Drawing.Size(314, 20)
         Me.eran_adr_txt.TabIndex = 14
         Me.eran_adr_txt.Text = "Eran address: 00000000000000000000000000000000"
-        Me.eran_adr_txt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'login_bt
         '
@@ -91,11 +88,11 @@ Partial Class account_frm
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.username_txt.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.username_txt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.username_txt.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.username_txt.Font = New System.Drawing.Font("Ubuntu", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.username_txt.ForeColor = System.Drawing.Color.White
-        Me.username_txt.Location = New System.Drawing.Point(136, 170)
+        Me.username_txt.Location = New System.Drawing.Point(136, 112)
         Me.username_txt.Name = "username_txt"
-        Me.username_txt.Size = New System.Drawing.Size(255, 28)
+        Me.username_txt.Size = New System.Drawing.Size(255, 25)
         Me.username_txt.TabIndex = 12
         Me.username_txt.Text = "username"
         Me.username_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -106,7 +103,8 @@ Partial Class account_frm
         Me.profile_img.BackgroundImage = Global.Eran_Mono.My.Resources.Resources.profilimage
         Me.profile_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.profile_img.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.profile_img.Location = New System.Drawing.Point(226, 90)
+        Me.profile_img.Image = Global.Eran_Mono.My.Resources.Resources.offlineR
+        Me.profile_img.Location = New System.Drawing.Point(226, 32)
         Me.profile_img.Name = "profile_img"
         Me.profile_img.Size = New System.Drawing.Size(74, 74)
         Me.profile_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize

@@ -38,14 +38,22 @@ Public Class main_frm
             API.Disconnect()
             Application.Exit()
         End If
-        
+        If userlist.UserList.Count > 0 Then
+            Dim ini As New IniFile
+            For Each tt In userlist.UserList
+                ini.SetKeyValue(tt.Username, "adress", tt.Address)
+            Next
+            Dim save_trg_enc As Byte()
+            AES.Encode(ini.SavetoByte(), save_trg_enc, EranAPI.Account.Password, AESEncrypt.ALGO.RIJNDAEL, 4096)
+            File.WriteAllBytes(My.Application.Info.DirectoryPath & OS.OS_slash & "userlist.ini", save_trg_enc)
+        End If
         
     End Sub
 
     Private Sub main_frm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Load Panels
 
-
+        
         If File.Exists(My.Application.Info.DirectoryPath & OS.OS_slash & "account.ini") Then
             main_panel.Hide()
             Me.Controls.Add(login.main_panel)
@@ -53,11 +61,6 @@ Public Class main_frm
             Dim ini As New IniFile
             ini.Load(My.Application.Info.DirectoryPath & OS.OS_slash & "account.ini")
             login.username_txt.Text = ini.GetKeyValue("account", "username")
-            Dim readIMG As Byte() = Convert.FromBase64String(ini.GetKeyValue("account", "image"))
-            Dim mem As New MemoryStream(readIMG)
-            login.profilimg.BackgroundImage = Image.FromStream(mem)
-            profile_img.BackgroundImage = Image.FromStream(mem)
-            account_frm.profile_img.BackgroundImage = Image.FromStream(mem)
             login.password_txt.Focus()
         Else
             main_panel.Hide()
@@ -210,10 +213,20 @@ Public Class main_frm
         If username.Length > 0 Then
             For Each tt As ListViewItem In userlist_viewer.Items
                 If tt.SubItems(1).Text = adress_ Then
-                    tt.Text = username
+                    If userlist.UserList.Exists(Function(x) x.Address = adress_) = True Then
+                        userlist.UserList.RemoveAt(userlist.UserList.FindIndex(Function(x) x.Address = adress_))
+                        Dim addUsr As New UserList_
+                        addUsr.Address = adress_
+                        addUsr.Username = username
+                        userlist.UserList.Add(addUsr)
+                    Else
+                        Dim addUsr As New UserList_
+                        addUsr.Address = adress_
+                        addUsr.Username = username
+                        userlist.UserList.Add(addUsr)
+                    End If
 
-                    userlist.del_user(adress_)
-                    userlist.add_user(username, adress_)
+                    tt.Text = username
                 End If
             Next
         End If
@@ -221,15 +234,10 @@ Public Class main_frm
 
     Private Sub DeleteUserToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteUserToolStripMenuItem.Click
 
-        If MessageBox.Show("Do you want delete this user?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            Dim p As Integer = userlist_viewer.SelectedIndices(0)
-            userlist.del_user(userlist_viewer.Items(p).Text)
-            userlist_viewer.Items(p).Remove()
-        Else
-
-        End If
-
-        
+        On Error Resume Next
+        Dim p As Integer = userlist_viewer.SelectedIndices(0)
+        userlist.del_user(userlist_viewer.Items(p).Text)
+        userlist_viewer.Items(p).Remove()
 
     End Sub
 
@@ -249,28 +257,6 @@ Public Class main_frm
     Private Sub OfflineToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OfflineToolStripMenuItem.Click
         API.SetOnlineState(0)
     End Sub
-    ''' <summary>
-    ''' Es wird ein Vibrate ausgeführt für ein bestimmtes Fenster.
-    ''' </summary>
-    ''' <param name="frm">Wähle die Form</param>
-    ''' <param name="repeat">Wie oft das Fenster vibrieren soll.</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Friend Shared Function vibrate_frm(ByVal frm As Form, ByVal repeat As Integer) As Object
-        frm.TopMost = True
-        For index As Integer = 0 To repeat
-            frm.Location = New Point(frm.Location.X - 10, frm.Location.Y)
-            System.Threading.Thread.Sleep(30)
-            frm.Location = New Point(frm.Location.X, frm.Location.Y - 10)
-            System.Threading.Thread.Sleep(30)
-            frm.Location = New Point(frm.Location.X + 10, frm.Location.Y)
-            System.Threading.Thread.Sleep(30)
-            frm.Location = New Point(frm.Location.X, frm.Location.Y + 10)
-        Next
-        frm.TopMost = False
-    End Function
-    Private MessagesBoxPanels(1000) As Panel
-
     Friend ChatSessionList As New List(Of ChatSession)
     Friend Structure ChatSession
         Dim Address As String
@@ -282,145 +268,65 @@ Public Class main_frm
         On Error Resume Next
 
         If ChatSessionList.Exists(Function(x) x.Address = Address) = True Then
-            If parameter.read_parameter("/alert ", Message).Length > 0 Then
-                Dim readLastMSG As String = ChatSessionList.Item(ChatSessionList.FindIndex(Function(x) x.Address = Address)).Messages
-                readLastMSG = readLastMSG & "Alert!" & vbNewLine
-                ChatSessionList.RemoveAt(ChatSessionList.FindIndex(Function(x) x.Address = Address))
-                Dim Chat As New ChatSession
-                Chat.Address = Address
-                Chat.Aliasname = Aliasname
-                Chat.Messages = readLastMSG
-                Chat.ProfileImage = ProfilImage
-                ChatSessionList.Add(Chat)
-                If PartnerAdress.Text = Address Then
-                    MessagesBox.Text = readLastMSG
-                Else
-                    For Each tt As ListViewItem In userlist_viewer.Items
-                        If tt.SubItems(1).Text = Address Then
-
-                            tt.ForeColor = Color.FromArgb(0, 122, 204)
-                            tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
-                        End If
-
-                    Next
-                End If
-                My.Computer.Audio.Play(My.Resources.alert, AudioPlayMode.Background)
-
-                vibrate_frm(Me, 3)
-
+            Dim readLastMSG As String = ChatSessionList.Item(ChatSessionList.FindIndex(Function(x) x.Address = Address)).Messages
+            readLastMSG = readLastMSG & Aliasname & ": " & Message & vbNewLine
+            ChatSessionList.RemoveAt(ChatSessionList.FindIndex(Function(x) x.Address = Address))
+            Dim Chat As New ChatSession
+            Chat.Address = Address
+            Chat.Aliasname = Aliasname
+            Chat.Messages = readLastMSG
+            Chat.ProfileImage = ProfilImage
+            ChatSessionList.Add(Chat)
+            If PartnerAdress.Text = Address Then
+                MessagesBox.Text = readLastMSG
             Else
-                If parameter.read_parameter("/alert ", Message).Length > 0 Then
-                    Dim readLastMSG As String = ChatSessionList.Item(ChatSessionList.FindIndex(Function(x) x.Address = Address)).Messages
-                    readLastMSG = readLastMSG & "Alert!" & vbNewLine
-                    ChatSessionList.RemoveAt(ChatSessionList.FindIndex(Function(x) x.Address = Address))
-                    Dim Chat As New ChatSession
-                    Chat.Address = Address
-                    Chat.Aliasname = Aliasname
-                    Chat.Messages = readLastMSG
-                    Chat.ProfileImage = ProfilImage
-                    ChatSessionList.Add(Chat)
-                    If PartnerAdress.Text = Address Then
-                        MessagesBox.Text = readLastMSG
-                    Else
-                        For Each tt As ListViewItem In userlist_viewer.Items
-                            If tt.SubItems(1).Text = Address Then
+                For Each tt As ListViewItem In userlist_viewer.Items
+                    If tt.SubItems(1).Text = Address Then
 
-                                tt.ForeColor = Color.FromArgb(0, 122, 204)
-                                tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
-                            End If
-
-                        Next
+                        tt.ForeColor = Color.FromArgb(0, 122, 204)
+                        tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
                     End If
-                    My.Computer.Audio.Play(My.Resources.alert, AudioPlayMode.Background)
 
-                    vibrate_frm(Me, 3)
-                Else
-                    Dim readLastMSG As String = ChatSessionList.Item(ChatSessionList.FindIndex(Function(x) x.Address = Address)).Messages
-                    readLastMSG = readLastMSG & Aliasname & ": " & Message & vbNewLine
-                    ChatSessionList.RemoveAt(ChatSessionList.FindIndex(Function(x) x.Address = Address))
-                    Dim Chat As New ChatSession
-                    Chat.Address = Address
-                    Chat.Aliasname = Aliasname
-                    Chat.Messages = readLastMSG
-                    Chat.ProfileImage = ProfilImage
-                    ChatSessionList.Add(Chat)
-                    If PartnerAdress.Text = Address Then
-                        MessagesBox.Text = readLastMSG
-                    Else
-                        For Each tt As ListViewItem In userlist_viewer.Items
-                            If tt.SubItems(1).Text = Address Then
-
-                                tt.ForeColor = Color.FromArgb(0, 122, 204)
-                                tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
-                            End If
-
-                        Next
-                    End If
-                    If isFormActiv = False Then
-                        balloon.profileimg.Image = ProfilImage
-                        balloon.usernametxt.Text = Aliasname
-                        balloon.messagetxt.Text = Message
-                        If balloon.ShowDialog = Windows.Forms.DialogResult.OK Then
-                            Me.TopMost = True
-                            Me.TopMost = False
-                        Else
-                            Me.BringToFront()
-                        End If
-                    End If
-                End If
-                
+                Next
             End If
-            
+            If isFormActiv = False Then
+                balloon.profileimg.Image = ProfilImage
+                balloon.usernametxt.Text = Aliasname
+                balloon.messagetxt.Text = Message
+                If balloon.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    Me.TopMost = True
+                    Me.TopMost = False
+                Else
+                    Me.BringToFront()
+                End If
+            End If
         Else
-            If parameter.read_parameter("/alert ", Message).Length > 0 Then
-                Dim Chat As New ChatSession
-                Chat.Address = Address
-                Chat.Aliasname = Aliasname
-                Chat.Messages = "Alert! " & vbNewLine
-                Chat.ProfileImage = ProfilImage
-                ChatSessionList.Add(Chat)
+            
+            Dim Chat As New ChatSession
+            Chat.Address = Address
+            Chat.Aliasname = Aliasname
+            Chat.Messages = Aliasname & ": " & Message & vbNewLine
+            Chat.ProfileImage = ProfilImage
+            ChatSessionList.Add(Chat)
 
-                If PartnerAdress.Text = Address Then
-                    MessagesBox.Text = "Alert! " & vbNewLine
-                Else
-                    For Each tt As ListViewItem In userlist_viewer.Items
-                        If tt.SubItems(1).Text = Address Then
-                            tt.ForeColor = Color.FromArgb(0, 122, 204)
-                            tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
-                        End If
-                    Next
-                End If
-                My.Computer.Audio.Play(My.Resources.alert, AudioPlayMode.Background)
-
-                vibrate_frm(Me, 3)
+            If PartnerAdress.Text = Address Then
+                MessagesBox.Text = Aliasname & ": " & Message & vbNewLine
             Else
-                Dim Chat As New ChatSession
-                Chat.Address = Address
-                Chat.Aliasname = Aliasname
-                Chat.Messages = Aliasname & ": " & Message & vbNewLine
-                Chat.ProfileImage = ProfilImage
-                ChatSessionList.Add(Chat)
-
-                If PartnerAdress.Text = Address Then
-                    MessagesBox.Text = Aliasname & ": " & Message & vbNewLine
-                Else
-                    For Each tt As ListViewItem In userlist_viewer.Items
-                        If tt.SubItems(1).Text = Address Then
-                            tt.ForeColor = Color.FromArgb(0, 122, 204)
-                            tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
-                        End If
-                    Next
-                End If
-                If isFormActiv = False Then
-                    balloon.usernametxt.Text = Aliasname
-                    balloon.messagetxt.Text = Message
-                    If balloon.ShowDialog = Windows.Forms.DialogResult.OK Then
-                        Me.TopMost = True
-                        Me.TopMost = False
+                For Each tt As ListViewItem In userlist_viewer.Items
+                    If tt.SubItems(1).Text = Address Then
+                        tt.ForeColor = Color.FromArgb(0, 122, 204)
+                        tt.Font = New Font("Ubuntu", 12, FontStyle.Bold)
                     End If
+                Next
+            End If
+            If isFormActiv = False Then
+                balloon.usernametxt.Text = Aliasname
+                balloon.messagetxt.Text = Message
+                If balloon.ShowDialog = Windows.Forms.DialogResult.OK Then
+                    Me.TopMost = True
+                    Me.TopMost = False
                 End If
             End If
-            
         End If
 
     End Sub
@@ -434,7 +340,47 @@ Public Class main_frm
     End Sub
 
     Private Sub userlist_viewer_MouseClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles userlist_viewer.MouseClick
-        
+        Try
+            Dim getIndex As Integer = userlist_viewer.SelectedIndices(0)
+            'Check of Green
+            If userlist_viewer.Items(getIndex).ForeColor = Color.FromArgb(0, 122, 204) Then
+                userlist_viewer.Items(getIndex).ForeColor = Color.White
+                userlist_viewer.Items(getIndex).Font = New Font("Ubuntu", 12, FontStyle.Regular)
+            End If
+            PartnerName.Text = userlist_viewer.Items(getIndex).Text
+            PartnerAdress.Text = userlist_viewer.Items(getIndex).SubItems(1).Text
+            Select Case userlist_viewer.Items(getIndex).ImageIndex
+                Case 0
+                    PartnerProfilImage.Image = My.Resources.offlineR
+                Case 1
+                    PartnerProfilImage.Image = My.Resources.busyR
+                Case 2
+                    PartnerProfilImage.Image = My.Resources.onlineR
+            End Select
+            If ChatSessionList.Exists(Function(x) x.Address = userlist_viewer.Items(getIndex).SubItems(1).Text) Then
+
+                Dim getListIndex As Integer = ChatSessionList.FindIndex(Function(x) x.Address = userlist_viewer.Items(getIndex).SubItems(1).Text)
+                PartnerProfilImage.BackgroundImage = ChatSessionList.Item(getListIndex).ProfileImage
+                MessagesBox.Text = ChatSessionList.Item(getListIndex).Messages
+                lock_bt.Enabled = True
+                Label2.Text = "Encrypted!"
+                lock_bt.Image = My.Resources.lock
+                InMessege.Enabled = True
+                InMessege.BackColor = Color.FromArgb(45, 45, 45)
+            Else
+
+                lock_bt.Enabled = False
+                lock_bt.Image = My.Resources.unlock
+                Label2.Text = "..."
+                InMessege.Enabled = False
+                InMessege.BackColor = Color.Gray
+                PartnerProfilImage.BackgroundImage = My.Resources.profilimage
+                MessagesBox.Text = ""
+
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub PartnerAdress_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles PartnerAdress.TextChanged
@@ -442,7 +388,7 @@ Public Class main_frm
             Case 0
 
             Case Else
-                'API.SendToServer("/adress " & EranAPI.Account.Address & "; /to " & PartnerAdress.Text & ";")
+                API.SendToServer("/adress " & EranAPI.Account.Address & "; /to " & PartnerAdress.Text & ";")
                 If API.isEncryptedUser(PartnerAdress.Text) = False Then
                     Dim trd As New Threading.Thread(AddressOf API.KeyExchange)
                     trd.Start(PartnerAdress.Text)
@@ -505,81 +451,30 @@ Public Class main_frm
 
     End Sub
 
-    Private Sub userlist_viewer_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles userlist_viewer.MouseUp
-        If e.Button = Windows.Forms.MouseButtons.Right Then
-            If userlist_viewer.SelectedItems.Count > 0 Then
-                UserListViewerContext.Show(MousePosition)
-            End If
-        End If
-    End Sub
-
     Private Sub userlist_viewer_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles userlist_viewer.SelectedIndexChanged
         chat_panel.Show()
-        Try
-            Dim getIndex As Integer = userlist_viewer.SelectedIndices(0)
-            'Check of Green
-            If userlist_viewer.Items(getIndex).ForeColor = Color.FromArgb(0, 122, 204) Then
-                userlist_viewer.Items(getIndex).ForeColor = Color.White
-                userlist_viewer.Items(getIndex).Font = New Font("Ubuntu", 12, FontStyle.Regular)
-            End If
-            PartnerName.Text = userlist_viewer.Items(getIndex).Text
-            PartnerAdress.Text = userlist_viewer.Items(getIndex).SubItems(1).Text
-            Select Case userlist_viewer.Items(getIndex).ImageIndex
-                Case 0
-                    PartnerProfilImage.Image = My.Resources.offlineR
-                Case 1
-                    PartnerProfilImage.Image = My.Resources.busyR
-                Case 2
-                    PartnerProfilImage.Image = My.Resources.onlineR
-            End Select
-            If API.isEncryptedUser(PartnerAdress.Text) Then
-                Dim getListIndex As Integer = API.ChatSessions.FindIndex(Function(x) x.Address = userlist_viewer.Items(getIndex).SubItems(1).Text)
-                Try
-                    PartnerProfilImage.BackgroundImage = API.ChatSessions.Item(getListIndex).ProfilImage
-                Catch ex As Exception
-
-                End Try
-                Try
-                    MessagesBox.Text = ChatSessionList.Item(getListIndex).Messages
-                Catch ex As Exception : End Try
-                lock_bt.Enabled = True
-                encryption_lb.Text = "Encrypted!"
-                lock_bt.Image = My.Resources.lock
-                InMessege.Enabled = True
-                InMessege.BackColor = Color.FromArgb(45, 45, 45)
-            Else
-                lock_bt.Enabled = False
-                lock_bt.Enabled = True
-                lock_bt.Image = My.Resources.unlock
-                encryption_lb.Text = "..."
-                InMessege.Enabled = False
-                InMessege.BackColor = Color.Gray
-                PartnerProfilImage.BackgroundImage = My.Resources.profilimage
-                MessagesBox.Text = ""
-            End If
-        Catch ex As Exception : End Try
     End Sub
 
     Private Sub API_KeyExchangeStatus(ByVal Status As Integer, ByVal Address As String) Handles API.KeyExchangeStatus
         If Address = PartnerAdress.Text Then
             Select Case Status
                 Case 0
-                    encryption_lb.Text = "Send my Public Key..."
+                    Label2.Text = "Send my Public Key..."
                 Case 1
-                    encryption_lb.Text = "Public Key sendet..."
+                    Label2.Text = "Public Key sendet..."
                 Case 2
-                    encryption_lb.Text = "Receive Public Key..."
+                    Label2.Text = "Receive Public Key..."
                 Case 3
-                    encryption_lb.Text = "Send encrypted key back..."
+                    Label2.Text = "Send encrypted key back..."
                 Case 4
-                    encryption_lb.Text = "Decrypt key..."
+                    Label2.Text = "Decrypt key..."
                 Case 5
-                    encryption_lb.Text = "Encrypted!"
+                    Label2.Text = "Encrypted!"
                 Case 6
-                    encryption_lb.Text = "Encryption broken!"
+                    Label2.Text = "Encryption broken!"
             End Select
         End If
-
+        
     End Sub
 
     Private Sub profile_img_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles profile_img.Click
@@ -593,16 +488,12 @@ Public Class main_frm
 
 
 
-    Private Sub Button5_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles rec_bt.MouseDown
-        record.start_record()
-        rec_bt.Image = My.Resources.recon24
-
+    Private Sub Button5_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5.MouseDown
+        Button5.Image = My.Resources.recon24
     End Sub
 
-    Private Sub Button5_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles rec_bt.MouseUp
-        record.save_record(My.Application.Info.DirectoryPath & "\rec.wav")
-        rec_bt.Image = My.Resources.recoff24
-
+    Private Sub Button5_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button5.MouseUp
+        Button5.Image = My.Resources.recoff24
     End Sub
 
     Private Sub lock_bt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lock_bt.Click
@@ -612,7 +503,7 @@ Public Class main_frm
         
     End Sub
 
-    Private Sub TestToolStripMenuItem1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub TestToolStripMenuItem1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TestToolStripMenuItem1.Click
 
     End Sub
 
@@ -630,53 +521,7 @@ Public Class main_frm
         End If
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles alert_bt.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         API.SendToClient(PartnerAdress.Text, "/alert 1;")
-    End Sub
-
-    Private Sub ToolStripMenuItem12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem12.Click
-        lock_bt.Enabled = False
-        MessagesBox.AppendText("Renew encryption..." & vbNewLine)
-        API.SendToServer("/adress " & EranAPI.Account.Address & "; /to " & PartnerAdress.Text & "; /handshake 0;")
-
-        Dim fIndex As Integer = API.ChatSessions.FindIndex(Function(x) x.Address = PartnerAdress.Text)
-        API.ChatSessions.RemoveAt(fIndex)
-
-    End Sub
-
-    Private Sub adduser_bt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles adduser_bt.Click
-        Slider.Slide(add_user.main_panel)
-    End Sub
-
-    Private Sub PartnerAdress_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PartnerAdress.Click
-        My.Computer.Clipboard.SetText(PartnerAdress.Text)
-        MessageBox.Show("Address copied!", "Copy", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-
-    Private Sub PartnerName_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PartnerName.Click
-
-    End Sub
-
-    Private Sub CopyAddressToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CopyAddressToolStripMenuItem.Click
-        MsgBox(userlist_viewer.SelectedItems.Count)
-    End Sub
-    Dim objIndex As Integer = 50
-    Private Sub rec_bt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rec_bt.Click
-       
-    End Sub
-
-
-    Private Sub ToolStripMenuItem11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem11.Click
-        Slider.Slide(fileTransfers.main_panel)
-    End Sub
-
-    Private Sub API_PackageRequest(ByVal Address As String) Handles API.PackageRequest
-        If MessageBox.Show("Do you want accept a file from " & Address & "?", "Packetrequest", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            API.SendToServer("/adress " & EranAPI.Account.Address & "; /to " & Address & "; /accept_trans 1;")
-        End If
-    End Sub
-
-    Private Sub ToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripMenuItem3.Click
-        Slider.Slide(settings.main_panel)
     End Sub
 End Class

@@ -49,7 +49,7 @@ Partial Class connecting_frame
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel1.Font = New System.Drawing.Font("Ubuntu Mono", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -61,10 +61,10 @@ Partial Class connecting_frame
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Light", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Ubuntu Condensed", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(97, 184)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(176, 40)
+        Me.Label4.Size = New System.Drawing.Size(158, 35)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Connecting..."
         '
@@ -73,7 +73,7 @@ Partial Class connecting_frame
         Me.acc_veri_img.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.acc_veri_img.BackColor = System.Drawing.Color.Transparent
         Me.acc_veri_img.Image = Global.Eran_Mono.My.Resources.Resources.accept
-        Me.acc_veri_img.Location = New System.Drawing.Point(102, 287)
+        Me.acc_veri_img.Location = New System.Drawing.Point(102, 292)
         Me.acc_veri_img.Name = "acc_veri_img"
         Me.acc_veri_img.Size = New System.Drawing.Size(16, 16)
         Me.acc_veri_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -86,7 +86,7 @@ Partial Class connecting_frame
         Me.con_img.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.con_img.BackColor = System.Drawing.Color.Transparent
         Me.con_img.Image = Global.Eran_Mono.My.Resources.Resources.accept
-        Me.con_img.Location = New System.Drawing.Point(102, 260)
+        Me.con_img.Location = New System.Drawing.Point(102, 262)
         Me.con_img.Name = "con_img"
         Me.con_img.Size = New System.Drawing.Size(16, 16)
         Me.con_img.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -112,10 +112,9 @@ Partial Class connecting_frame
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(124, 288)
+        Me.Label3.Location = New System.Drawing.Point(124, 292)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(117, 13)
+        Me.Label3.Size = New System.Drawing.Size(145, 15)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "account verification..."
         '
@@ -124,10 +123,9 @@ Partial Class connecting_frame
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(124, 261)
+        Me.Label2.Location = New System.Drawing.Point(124, 262)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(90, 13)
+        Me.Label2.Size = New System.Drawing.Size(115, 15)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "login to server..."
         '
@@ -136,10 +134,9 @@ Partial Class connecting_frame
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(124, 233)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 13)
+        Me.Label1.Size = New System.Drawing.Size(121, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Check login data..."
         '

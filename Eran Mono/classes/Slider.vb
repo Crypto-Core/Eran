@@ -21,7 +21,7 @@
             slideIn_Control(Control)
         End Try
 
-
+        main_frm.Text = isAlone
     End Function
     Friend Function slideOut_Control(ByVal Control As Control)
 
